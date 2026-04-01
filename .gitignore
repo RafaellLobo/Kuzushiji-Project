@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+venv/
+*.egg-info/
+
+# Modelos treinados (arquivos grandes — não vão pro git)
+backend/app/models/*.pt
+backend/app/models/*.pth
+backend/app/models/*.weights
+backend/app/models/*.onnx
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.env
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log

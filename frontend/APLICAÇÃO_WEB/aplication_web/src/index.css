@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --card: 38 50% 90%;
+    --card-foreground: 20 14% 4%;
+    --deep-crimson: 0 100% 21%;
+    --deep-crimson-foreground: 60 9% 98%;
+    --background: 40 33% 98%;
+    --foreground: 20 14% 4%;
+    --border: 35 25% 80%;
+    --gold: 40 50% 60%;
+    --muted: 60 5% 96%;
+    --muted-foreground: 25 5% 45%;
+  }
+}
+
+
+body {
+  @apply bg-background text-foreground;
+}
+
+@layer utilities {
+  .animate-sakura-fall {
+    animation: sakura-fall linear infinite;
+  }
+
+  @keyframes sakura-fall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg) translateX(0);
+    }
+    100% {
+      
+      transform: translateY(110vh) rotate(360deg) translateX(20px); 
+    }
+  }
+}
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .animate-ink-spread {
+    animation: inkSpread 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .animate-brush-write {
+    animation: brushWrite 1s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes inkSpread {
+    0% { transform: scale(0.5); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+  @keyframes brushWrite {
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+  }
