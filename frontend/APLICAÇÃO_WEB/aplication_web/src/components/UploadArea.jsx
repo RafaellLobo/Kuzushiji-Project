@@ -2,7 +2,6 @@ import { useState, useRef, useCallback } from "react";
 import { Upload, Camera, Image as ImageIcon, RotateCcw } from "lucide-react";
 import brushStroke from "../assets/brush-stroke.png";
 
-
 const PLACEHOLDER_TRANSCRIPTION = `春の夜の夢ばかりなる手枕に
 かひなく立たむ名こそ惜しけれ
 
@@ -15,17 +14,43 @@ const PLACEHOLDER_TRANSCRIPTION = `春の夜の夢ばかりなる手枕に
 const UploadArea = () => {
   const [state, setState] = useState("idle");
   const [previewUrl, setPreviewUrl] = useState(null);
+  const [translationData, setTranslationData] = useState(null);
   const fileInputRef = useRef(null);
   const cameraInputRef = useRef(null);
 
-  const handleFile = useCallback((file) => {
+  const handleFile = useCallback(async (file) => {
     if (!file.type.startsWith("image/")) return;
+    
     setState("loading");
+    
     const url = URL.createObjectURL(file);
-    setTimeout(() => {
-      setPreviewUrl(url);
-      setState("results");
-    }, 2500);
+    setPreviewUrl(url);
+
+    const formData = new FormData();
+    formData.append("image", file); 
+
+    try {
+      const response = await fetch("http://localhost:8000/translate", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        console.log("Resposta do Servidor:", data.data);
+        setTranslationData(data.data);
+        setState("results");
+      } else {
+        console.error("Erro na API:", data.error);
+        alert("Ocorreu um erro ao analisar a imagem.");
+        setState("idle");
+      }
+    } catch (error) {
+      console.error("Erro de conexão:", error);
+      alert("Não foi possível conectar ao servidor. O back-end está rodando?");
+      setState("idle");
+    }
   }, []);
 
   const handleDrop = useCallback((e) => {
@@ -51,14 +76,13 @@ const UploadArea = () => {
 
   const reset = () => {
     setPreviewUrl(null);
+    setTranslationData(null); 
     setState("idle");
   };
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
-
       <div className="relative bg-card backdrop-blur-sm border-4 border-border rounded-none shadow-xl overflow-hidden">
-
         <div className="h-3 bg-gradient-to-r from-gold/40 via-gold/70 to-gold/40 border-b border-border/50" />
 
         <div className="p-6 sm:p-10">
@@ -74,7 +98,6 @@ const UploadArea = () => {
             </div>
           ) : state === "results" && previewUrl ? (
             <div className="animate-fade-in">
-
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
                 
                 <div className="md:w-1/2 flex flex-col items-center">
@@ -94,9 +117,34 @@ const UploadArea = () => {
                   </h3>
                   
                   <div className="flex-1 bg-background/60 border border-border rounded-none p-5 mb-5 min-h-[200px] shadow-inner overflow-auto">
-                    <p className="font-display text-foreground leading-relaxed whitespace-pre-line text-sm sm:text-base">
-                      {PLACEHOLDER_TRANSCRIPTION}
-                    </p>
+                    {translationData ? (
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="text-sm font-bold text-deepCrimson mb-1">Kanjis Detectados:</h4>
+                          <p className="font-display text-lg tracking-widest text-foreground">
+                            {translationData.characters.map(c => c.old_kanji).join("  ")}
+                          </p>
+                        </div>
+                        
+                        <div className="pt-2 border-t border-border/50">
+                          <h4 className="text-sm font-bold text-deepCrimson mb-1">Japonês Moderno:</h4>
+                          <p className="font-display text-foreground leading-relaxed">
+                            {translationData.japanese_text}
+                          </p>
+                        </div>
+
+                        <div className="pt-2 border-t border-border/50">
+                          <h4 className="text-sm font-bold text-deepCrimson mb-1">Tradução (Inglês):</h4>
+                          <p className="font-display text-foreground leading-relaxed italic">
+                            {translationData.english_translation}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <p className="font-display text-foreground leading-relaxed whitespace-pre-line text-sm sm:text-base">
+                        {PLACEHOLDER_TRANSCRIPTION}
+                      </p>
+                    )}
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3">
@@ -122,7 +170,6 @@ const UploadArea = () => {
             </div>
           ) : (
             <>
-
               <div
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
