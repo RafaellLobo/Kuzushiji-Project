@@ -1,3 +1,5 @@
+import { useCamera } from "../hooks/useCamera";
+import { useTranslation } from "../hooks/useTranslation";
 import { useState, useRef, useCallback, useEffect } from "react";
 import { Upload, Camera, Image as ImageIcon, RotateCcw, ArrowRight, Languages, X } from "lucide-react";
 import brushStroke from "../assets/brush-stroke.png";
@@ -7,10 +9,6 @@ const UploadArea = () => {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [translationData, setTranslationData] = useState(null);
-  
-  const [isCameraOpen, setIsCameraOpen] = useState(false);
-  const videoRef = useRef(null);
-  const streamRef = useRef(null);
   
   const fileInputRef = useRef(null);
 
@@ -22,105 +20,23 @@ const UploadArea = () => {
     setState("preview");
   }, []);
 
-  const startCamera = () => {
-    setIsCameraOpen(true);
-  };
-
-  const stopCamera = () => {
-    if (streamRef.current) {
-      streamRef.current.getTracks().forEach(track => track.stop());
-      streamRef.current = null;
-    }
-    setIsCameraOpen(false);
-  };
-
-  useEffect(() => {
-    const enableVideoStream = async () => {
-      if (isCameraOpen && videoRef.current) {
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia({
-            video: { width: { ideal: 1280 }, height: { ideal: 720 } }
-          });
-          
-          streamRef.current = stream;
-          videoRef.current.srcObject = stream;
-          
-          videoRef.current.onloadedmetadata = () => {
-            videoRef.current.play().catch(e => console.error("Erro ao dar play:", e));
-          };
-          
-        } catch (err) {
-          console.error("Erro ao conectar câmera:", err);
-          alert("Erro ao ligar a câmera. Verifique se outro app está usando ela.");
-        }
-      }
-    };
-
-    enableVideoStream();
-
-    return () => {
-      if (streamRef.current) {
-        streamRef.current.getTracks().forEach(track => track.stop());
-        streamRef.current = null;
-      }
-    };
-  }, [isCameraOpen]);
-
-  const capturePhoto = () => {
-    if (videoRef.current) {
-      const canvas = document.createElement("canvas");
-      canvas.width = videoRef.current.videoWidth;
-      canvas.height = videoRef.current.videoHeight;
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
-
-      canvas.toBlob((blob) => {
-        if (blob) {
-          const file = new File([blob], "camera_capture.jpg", { type: "image/jpeg" });
-          stopCamera();
-          handleFile(file);
-        }
-      }, "image/jpeg", 0.9);
-    }
-  };
-
-    useEffect(() => {
-    if (isCameraOpen && videoRef.current && streamRef.current) {
-      videoRef.current.srcObject = streamRef.current;
-      videoRef.current.play().catch(e => console.log("Erro ao dar play:", e)); 
-    }
-    return () => {
-      if (streamRef.current) {
-        streamRef.current.getTracks().forEach(track => track.stop());
-      }
-    };
-  }, [isCameraOpen]);
+  const { isCameraOpen, videoRef, startCamera, stopCamera, capturePhoto } = useCamera(handleFile);
+  const { translateImage } = useTranslation();
 
   const handleStartTranslation = async () => {
     if (!selectedFile) return;
     
-    setState("loading");
-    const formData = new FormData();
-    formData.append("image", selectedFile); 
+    setState("loading"); // Mostra a tela de tinta carregando
+    
+    // Manda a foto pro hook e espera a mágica acontecer
+    const data = await translateImage(selectedFile);
 
-    try {
-      const response = await fetch("http://localhost:8000/translate", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setTranslationData(data.data);
-        setState("results_jp"); 
-      } else {
-        alert("Ocorreu um erro ao analisar a imagem.");
-        setState("preview");
-      }
-    } catch (error) {
-      alert("Não foi possível conectar ao servidor. O back-end está rodando?");
-      setState("preview");
+    if (data) {
+      setTranslationData(data);
+      setState("results_jp"); // Se deu certo, mostra o Japonês
+    } else {
+      alert("Erro ao traduzir. Verifique se a API está rodando.");
+      setState("preview"); // Se deu erro, volta pra tela de espera
     }
   };
 
