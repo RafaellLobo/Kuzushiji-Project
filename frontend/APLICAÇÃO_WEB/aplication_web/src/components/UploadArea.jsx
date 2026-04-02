@@ -1,33 +1,107 @@
-import { useState, useRef, useCallback } from "react";
-import { Upload, Camera, Image as ImageIcon, RotateCcw } from "lucide-react";
+import { useState, useRef, useCallback, useEffect } from "react";
+import { Upload, Camera, Image as ImageIcon, RotateCcw, ArrowRight, Languages, X } from "lucide-react";
 import brushStroke from "../assets/brush-stroke.png";
 
-const PLACEHOLDER_TRANSCRIPTION = `春の夜の夢ばかりなる手枕に
-かひなく立たむ名こそ惜しけれ
-
-花の色は移りにけりないたづらに
-わが身世にふるながめせしまに
-
-めぐり逢ひて見しやそれとも分かぬ間に
-雲隠れにし夜半の月かな`;
-
 const UploadArea = () => {
-  const [state, setState] = useState("idle");
+  const [state, setState] = useState("idle"); 
   const [previewUrl, setPreviewUrl] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
   const [translationData, setTranslationData] = useState(null);
+  
+  const [isCameraOpen, setIsCameraOpen] = useState(false);
+  const videoRef = useRef(null);
+  const streamRef = useRef(null);
+  
   const fileInputRef = useRef(null);
-  const cameraInputRef = useRef(null);
 
-  const handleFile = useCallback(async (file) => {
+  const handleFile = useCallback((file) => {
     if (!file.type.startsWith("image/")) return;
-    
-    setState("loading");
-    
     const url = URL.createObjectURL(file);
     setPreviewUrl(url);
+    setSelectedFile(file);
+    setState("preview");
+  }, []);
 
+  const startCamera = () => {
+    setIsCameraOpen(true);
+  };
+
+  const stopCamera = () => {
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach(track => track.stop());
+      streamRef.current = null;
+    }
+    setIsCameraOpen(false);
+  };
+
+  useEffect(() => {
+    const enableVideoStream = async () => {
+      if (isCameraOpen && videoRef.current) {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({
+            video: { width: { ideal: 1280 }, height: { ideal: 720 } }
+          });
+          
+          streamRef.current = stream;
+          videoRef.current.srcObject = stream;
+          
+          videoRef.current.onloadedmetadata = () => {
+            videoRef.current.play().catch(e => console.error("Erro ao dar play:", e));
+          };
+          
+        } catch (err) {
+          console.error("Erro ao conectar câmera:", err);
+          alert("Erro ao ligar a câmera. Verifique se outro app está usando ela.");
+        }
+      }
+    };
+
+    enableVideoStream();
+
+    return () => {
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach(track => track.stop());
+        streamRef.current = null;
+      }
+    };
+  }, [isCameraOpen]);
+
+  const capturePhoto = () => {
+    if (videoRef.current) {
+      const canvas = document.createElement("canvas");
+      canvas.width = videoRef.current.videoWidth;
+      canvas.height = videoRef.current.videoHeight;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+
+      canvas.toBlob((blob) => {
+        if (blob) {
+          const file = new File([blob], "camera_capture.jpg", { type: "image/jpeg" });
+          stopCamera();
+          handleFile(file);
+        }
+      }, "image/jpeg", 0.9);
+    }
+  };
+
+    useEffect(() => {
+    if (isCameraOpen && videoRef.current && streamRef.current) {
+      videoRef.current.srcObject = streamRef.current;
+      videoRef.current.play().catch(e => console.log("Erro ao dar play:", e)); 
+    }
+    return () => {
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, [isCameraOpen]);
+
+  const handleStartTranslation = async () => {
+    if (!selectedFile) return;
+    
+    setState("loading");
     const formData = new FormData();
-    formData.append("image", file); 
+    formData.append("image", selectedFile); 
 
     try {
       const response = await fetch("http://localhost:8000/translate", {
@@ -38,36 +112,36 @@ const UploadArea = () => {
       const data = await response.json();
 
       if (data.success) {
-        console.log("Resposta do Servidor:", data.data);
         setTranslationData(data.data);
-        setState("results");
+        setState("results_jp"); 
       } else {
-        console.error("Erro na API:", data.error);
         alert("Ocorreu um erro ao analisar a imagem.");
-        setState("idle");
+        setState("preview");
       }
     } catch (error) {
-      console.error("Erro de conexão:", error);
       alert("Não foi possível conectar ao servidor. O back-end está rodando?");
-      setState("idle");
+      setState("preview");
     }
-  }, []);
+  };
+
+  const handleRevealEnglish = () => {
+    setState("results_en");
+  };
 
   const handleDrop = useCallback((e) => {
     e.preventDefault();
-    setState("idle");
     const file = e.dataTransfer.files[0];
     if (file) handleFile(file);
   }, [handleFile]);
 
   const handleDragOver = useCallback((e) => {
     e.preventDefault();
-    setState("dragging");
-  }, []);
+    if (state === "idle" && !isCameraOpen) setState("dragging");
+  }, [state, isCameraOpen]);
 
   const handleDragLeave = useCallback(() => {
-    setState("idle");
-  }, []);
+    if (state === "dragging") setState("idle");
+  }, [state]);
 
   const handleFileChange = useCallback((e) => {
     const file = e.target.files?.[0];
@@ -76,8 +150,10 @@ const UploadArea = () => {
 
   const reset = () => {
     setPreviewUrl(null);
-    setTranslationData(null); 
+    setSelectedFile(null);
+    setTranslationData(null);
     setState("idle");
+    stopCamera();
   };
 
   return (
@@ -96,10 +172,11 @@ const UploadArea = () => {
               <p className="font-display text-lg text-foreground">Analyzing ancient writing...</p>
               <p className="text-muted-foreground text-sm mt-2">墨跡を解読中</p>
             </div>
-          ) : state === "results" && previewUrl ? (
+          ) : state !== "idle" && state !== "dragging" ? (
             <div className="animate-fade-in">
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
                 
+                {/* Left: Imagem Original */}
                 <div className="md:w-1/2 flex flex-col items-center">
                   <div className="w-full border-2 border-border rounded-none p-2 bg-background/50 shadow-md">
                     <img
@@ -116,45 +193,67 @@ const UploadArea = () => {
                     <span className="text-deepCrimson">解読</span>結果 · Transcription
                   </h3>
                   
-                  <div className="flex-1 bg-background/60 border border-border rounded-none p-5 mb-5 min-h-[200px] shadow-inner overflow-auto">
-                    {translationData ? (
-                      <div className="space-y-4">
+                  <div className="flex-1 bg-background/60 border border-border rounded-none p-5 mb-5 min-h-[200px] shadow-inner flex flex-col justify-center">
+                    
+                    {state === "preview" && (
+                      <div className="text-center opacity-60">
+                        <p className="font-display text-lg mb-2">Ready for analysis.</p>
+                        <p className="text-sm">Click "Iniciar Tradução" to begin.</p>
+                      </div>
+                    )}
+
+                    {(state === "results_jp" || state === "results_en") && translationData && (
+                      <div className="space-y-4 animate-fade-in w-full">
                         <div>
-                          <h4 className="text-sm font-bold text-deepCrimson mb-1">Kanjis Detectados:</h4>
+                          <h4 className="text-sm font-bold text-deepCrimson mb-1">Kanji Detected:</h4>
                           <p className="font-display text-lg tracking-widest text-foreground">
                             {translationData.characters.map(c => c.old_kanji).join("  ")}
                           </p>
                         </div>
                         
                         <div className="pt-2 border-t border-border/50">
-                          <h4 className="text-sm font-bold text-deepCrimson mb-1">Japonês Moderno:</h4>
+                          <h4 className="text-sm font-bold text-deepCrimson mb-1">Modern Japanese:</h4>
                           <p className="font-display text-foreground leading-relaxed">
                             {translationData.japanese_text}
                           </p>
                         </div>
 
-                        <div className="pt-2 border-t border-border/50">
-                          <h4 className="text-sm font-bold text-deepCrimson mb-1">Tradução (Inglês):</h4>
-                          <p className="font-display text-foreground leading-relaxed italic">
-                            {translationData.english_translation}
-                          </p>
-                        </div>
+                        {state === "results_en" && (
+                          <div className="pt-2 border-t border-border/50 animate-fade-in">
+                            <h4 className="text-sm font-bold text-deepCrimson mb-1">Translation (English):</h4>
+                            <p className="font-display text-foreground leading-relaxed italic">
+                              {translationData.english_translation}
+                            </p>
+                          </div>
+                        )}
                       </div>
-                    ) : (
-                      <p className="font-display text-foreground leading-relaxed whitespace-pre-line text-sm sm:text-base">
-                        {PLACEHOLDER_TRANSCRIPTION}
-                      </p>
                     )}
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <button className="flex-1 px-5 py-2.5 bg-deepCrimson text-white font-display text-sm rounded-none hover:bg-deepCrimson/90 transition-all duration-300 hover:scale-105 shadow-md">
-                      Translate to English
-                    </button>
-                    <button className="flex-1 px-5 py-2.5 bg-transparent text-foreground border border-gold font-display text-sm rounded-none hover:bg-gold/10 transition-all duration-300 hover:scale-105 shadow-md">
-                      Botão de mandar para API
-                    </button>
+                    {state === "preview" ? (
+                      <button 
+                        onClick={handleStartTranslation}
+                        className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-deepCrimson text-white font-display text-sm rounded-none hover:bg-deepCrimson/90 transition-all shadow-md"
+                      >
+                        Iniciar Tradução <ArrowRight className="w-4 h-4" />
+                      </button>
+                    ) : (
+                      <button 
+                        onClick={handleRevealEnglish}
+                        disabled={state === "results_en"}
+                        className={`w-full flex items-center justify-center gap-2 px-5 py-3 font-display text-sm rounded-none transition-all shadow-md
+                          ${state === "results_en" 
+                            ? "bg-muted text-muted-foreground cursor-not-allowed border border-border" 
+                            : "bg-transparent text-foreground border border-gold hover:bg-gold/10"
+                          }`}
+                      >
+                        <Languages className="w-4 h-4" />
+                        {state === "results_en" ? "Translated to English" : "Translate to English"}
+                      </button>
+                    )}
                   </div>
+
                 </div>
               </div>
 
@@ -164,7 +263,39 @@ const UploadArea = () => {
                   className="flex items-center gap-2 px-5 py-2 text-muted-foreground hover:text-foreground font-display text-sm transition-colors duration-300"
                 >
                   <RotateCcw className="w-4 h-4" />
-                  Upload Another
+                  Upload Another Document
+                </button>
+              </div>
+            </div>
+          ) : isCameraOpen ? (
+            <div className="flex flex-col items-center justify-center animate-fade-in py-8">
+              <h3 className="font-display text-xl mb-4 text-foreground">Capture Document</h3>
+              <div className="relative w-full max-w-lg aspect-[4/3] bg-black rounded-none overflow-hidden border-4 border-border mb-6 shadow-lg">
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  playsInline
+                  muted
+                  className="w-full h-full object-cover scale-x-[-1]" 
+                />
+                <div className="absolute inset-0 pointer-events-none border-[40px] border-black/30"></div>
+                <div className="absolute inset-1/4 pointer-events-none border-2 border-white/50 border-dashed"></div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md justify-center">
+                <button 
+                  onClick={capturePhoto} 
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-deepCrimson text-white font-display rounded-none hover:bg-deepCrimson/90 shadow-md"
+                >
+                  <Camera className="w-5 h-5" />
+                  Capture image
+                </button>
+                <button 
+                  onClick={stopCamera} 
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-foreground border-2 border-border font-display rounded-none hover:bg-black/5 shadow-md"
+                >
+                  <X className="w-5 h-5" />
+                  Cancel
                 </button>
               </div>
             </div>
@@ -197,37 +328,29 @@ const UploadArea = () => {
               </div>
 
               <div className="flex items-center justify-center my-6">
-                <img
-                  src={brushStroke}
-                  alt=""
-                  className="w-48 h-auto opacity-20 animate-brush-write"
-                  loading="lazy"
-                />
+                <img src={brushStroke} alt="" className="w-48 h-auto opacity-20 animate-brush-write" loading="lazy" />
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="flex items-center justify-center gap-3 px-6 py-3 bg-deepCrimson text-white font-display rounded-none hover:bg-deepCrimson/90 transition-all duration-300 hover:scale-105 shadow-md"
+                  className="flex items-center justify-center gap-3 px-6 py-3 bg-deepCrimson text-white font-display rounded-none hover:bg-deepCrimson/90 transition-all duration-300 shadow-md"
                 >
-                  <Upload className="w-5 h-5" />
-                  Upload Image
+                  <Upload className="w-5 h-5" /> Upload Image
                 </button>
+
                 <button
-                  onClick={() => cameraInputRef.current?.click()}
-                  className="flex items-center justify-center gap-3 px-6 py-3 bg-transparent text-foreground border border-gold font-display rounded-none hover:bg-gold/10 transition-all duration-300 hover:scale-105 shadow-md"
+                  onClick={startCamera}
+                  className="flex items-center justify-center gap-3 px-6 py-3 bg-transparent text-foreground border border-gold font-display rounded-none hover:bg-gold/10 transition-all duration-300 shadow-md"
                 >
-                  <Camera className="w-5 h-5" />
-                  Use Camera
+                  <Camera className="w-5 h-5" /> Use Camera
                 </button>
               </div>
 
               <input ref={fileInputRef} type="file" accept="image/jpeg,image/png,image/jpg" className="hidden" onChange={handleFileChange} />
-              <input ref={cameraInputRef} type="file" accept="image/jpeg,image/png,image/jpg" capture="environment" className="hidden" onChange={handleFileChange} />
             </>
           )}
         </div>
-
         <div className="h-3 bg-gradient-to-r from-gold/40 via-gold/70 to-gold/40 border-t border-border/50" />
       </div>
     </div>
