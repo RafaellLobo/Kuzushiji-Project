@@ -1,16 +1,12 @@
 import time
-import os
-from datetime import datetime
+import cv2
+import numpy as np
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from app.services.yolo_agent import segment_and_normalize
 from app.services.classifier import classify_kanji
 from app.services.translator import translate_to_english
 
 router = APIRouter(prefix="/translate", tags=["translate"])
-
-# --- Configuração da pasta temporária ---
-TEMP_FOLDER = "app/temp"
-os.makedirs(TEMP_FOLDER, exist_ok=True)
 
 @router.post("")
 async def translate(image: UploadFile = File(...)):
@@ -25,21 +21,22 @@ async def translate(image: UploadFile = File(...)):
         })
 
     start = time.time()
+    
+    # 1. Lê a foto do Front-end em formato de Bytes brutos (na RAM)
     image_bytes = await image.read()
 
-    # --- NOVO: Salvando a imagem fisicamente na pasta temp ---
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    file_extension = image.filename.split(".")[-1] if "." in image.filename else "jpg"
-    safe_filename = f"upload_{timestamp}.{file_extension}"
-    file_path = os.path.join(TEMP_FOLDER, safe_filename)
-
-    with open(file_path, "wb") as f:
-        f.write(image_bytes)
-    # ---------------------------------------------------------
+    # --- NOVO: Conversão direta na Memória RAM (sem salvar no HD) ---
+    # 2. Transforma os bytes em um array do NumPy
+    nparr = np.frombuffer(image_bytes, np.uint8)
+    
+    # 3. Decodifica o array em uma matriz de imagem que o YOLO/OpenCV entende
+    img_matrix = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    # ----------------------------------------------------------------
 
     # Etapa 1: YOLO — segmentação e normalização
     try:
-        kanji_images = segment_and_normalize(image_bytes)
+        # Agora enviamos a matriz pronta em vez dos bytes brutos
+        kanji_images = segment_and_normalize(img_matrix)
     except NotImplementedError as e:
         # MOCK TEMPORÁRIO: Se a IA não estiver conectada ainda, devolvemos os dados 
         # prontos para o Front-end continuar funcionando lindamente!
