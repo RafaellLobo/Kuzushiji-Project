@@ -1,31 +1,44 @@
-# =============================================================================
-# PLACEHOLDER — Agente YOLO
-# =============================================================================
-# Este arquivo define a interface que o modelo YOLO deve implementar.
-# Quando o modelo estiver pronto, substitua o corpo da função abaixo
-# mantendo exatamente a mesma assinatura.
-#
-# Responsável pela implementação: [nome do colega]
-# Referência de interface: docs/fluxo.md — Contrato 3
-# =============================================================================
+from __future__ import annotations
 
-def segment_and_normalize(image_bytes: bytes) -> list[bytes]:
+import cv2
+
+from app.services.contracts import BoundingBox, ImageMatrix, KanjiSegment
+
+
+class SegmentationService:
+    """Adapter boundary for YOLO/ONNX/PyTorch segmentation runtimes."""
+
+    def segment_and_normalize(self, image_bgr: ImageMatrix) -> list[KanjiSegment]:
+        return segment_and_normalize(image_bgr)
+
+
+def segment_and_normalize(image_bgr: ImageMatrix) -> list[KanjiSegment]:
     """
-    Recebe a imagem original em bytes.
+    Development adapter until the trained YOLO model is plugged in.
 
-    Retorna lista de imagens 28x28px (bytes), cada uma contendo
-    um kanji recortado e normalizado:
-      - Fundo preto
-      - Caractere branco centralizado
-      - Ordenadas: coluna direita para esquerda, de cima para baixo
-
-    TODO: substituir pelo modelo YOLO treinado.
+    The contract is already production-shaped: receive an OpenCV BGR matrix and
+    return ordered 28x28 crops plus bounding boxes, without disk I/O.
     """
-    raise NotImplementedError(
-        "Agente YOLO ainda não integrado. Ver docs/fluxo.md para a interface esperada."
-    )
+    height, width = image_bgr.shape[:2]
+    if height == 0 or width == 0:
+        return []
 
-def segment_and_normalize(image_bytes: bytes) -> list:
-    # Simula que o YOLO encontrou 3 kanjis na foto e os recortou
-    # Retornamos 3 "bytes" falsos para enganar o próximo passo
-    return [b"kanji_1", b"kanji_2", b"kanji_3"]
+    crop_size = min(height, width, 96)
+    y = max((height - crop_size) // 2, 0)
+    step = max(crop_size // 2, 1)
+    segment_count = 3
+    segments: list[KanjiSegment] = []
+
+    for index in range(segment_count):
+        x = min(index * step, max(width - crop_size, 0))
+        crop = image_bgr[y : y + crop_size, x : x + crop_size]
+        normalized_crop = cv2.resize(crop, (28, 28), interpolation=cv2.INTER_AREA)
+        segments.append(
+            KanjiSegment(
+                order=index + 1,
+                crop=normalized_crop,
+                bounding_box=BoundingBox(x=x, y=y, w=crop.shape[1], h=crop.shape[0]),
+            )
+        )
+
+    return segments

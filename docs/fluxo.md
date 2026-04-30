@@ -1,37 +1,40 @@
-# Fluxo do sistema — contrato entre componentes
+# Fluxo do Sistema: Contrato Entre Componentes
 
-Este documento define a interface entre cada parte do sistema.
-**Todos os integrantes devem seguir esses contratos ao implementar seus módulos.**
+Este documento define as interfaces entre o front-end, a API e os adapters de IA.
 
----
+## Visao Geral
 
-## Visão geral
-
+```text
+[React] -> POST /translate (multipart/form-data) -> [FastAPI]
+                                                     |
+                                                     v
+                                           ImageDecoder
+                                      bytes -> np.ndarray BGR
+                                                     |
+                                                     v
+                                  SegmentationService.segment_and_normalize()
+                                                     |
+                                                     v
+                                  ClassificationService.classify_batch()
+                                                     |
+                                                     v
+                                  TranslationService.translate_to_english()
+                                                     |
+                                                     v
+                                      JSON de resposta para o front-end
 ```
-[React] → POST /translate (multipart/form-data) → [FastAPI]
-                                                        ↓
-                                              yolo_agent.segment_and_normalize()
-                                                        ↓
-                                              classifier.classify_kanji()  (por kanji)
-                                                        ↓
-                                              translator.translate_to_english()
-                                                        ↓
-                                         ← JSON de resposta ← [FastAPI]
-```
 
----
+## Contrato 1: Front-end -> Back-end
 
-## Contrato 1 — Front-end → Back-end
+- Rota: `POST /translate`
+- Content-Type: `multipart/form-data`
+- Campo: `image`
+- Formatos esperados: `jpg`, `jpeg`, `png`
 
-**Rota:** `POST /translate`
-**Content-Type:** `multipart/form-data`
-**Campo:** `image` (arquivo de imagem: jpg, png)
-
----
-
-## Contrato 2 — Back-end → Front-end (resposta JSON)
+## Contrato 2: Back-end -> Front-end
 
 ### Sucesso
+
 ```json
 {
   "success": true,
@@ -54,53 +57,41 @@ Este documento define a interface entre cada parte do sistema.
 ```
 
 ### Erro
+
 ```json
 {
   "success": false,
   "data": null,
   "error": {
-    "code": "YOLO_NOT_INTEGRATED",
-    "message": "O agente de segmentação ainda não foi integrado."
+    "code": "NO_KANJI_FOUND",
+    "message": "Nenhum kanji foi detectado na imagem."
   }
 }
 ```
 
-### Códigos de erro possíveis
-| Código | Situação |
-|---|---|
-| `YOLO_NOT_INTEGRATED` | Placeholder do YOLO ainda ativo |
-| `CLASSIFIER_NOT_INTEGRATED` | Placeholder do classificador ainda ativo |
-| `NO_KANJI_FOUND` | Nenhum kanji detectado na imagem |
-| `TRANSLATION_FAILED` | Falha na API de tradução |
-| `INVALID_IMAGE` | Arquivo enviado não é uma imagem válida |
+Codigos principais:
 
----
+| Codigo | Situacao |
+| --- | --- |
+| `INVALID_IMAGE` | Arquivo vazio, corrompido, muito grande ou com MIME invalido |
+| `CLASSIFIER_NOT_INTEGRATED` | Classificador retornou resposta invalida |
+| `NO_KANJI_FOUND` | Nenhum segmento foi detectado |
+| `TRANSLATION_FAILED` | Falha na traducao externa |
 
-## Contrato 3 — Interface do agente YOLO
+## Contrato 3: Segmentacao
 
-**Arquivo:** `backend/app/services/yolo_agent.py`
-**Função:** `segment_and_normalize(image_bytes: bytes) -> list[bytes]`
+- Arquivo: `backend/app/services/yolo_agent.py`
+- Funcao: `segment_and_normalize(image_bgr: np.ndarray) -> list[KanjiSegment]`
+- Entrada: matriz OpenCV BGR decodificada em RAM.
+- Saida: lista ordenada de segmentos com crop 28x28 e bounding box.
 
-- **Entrada:** imagem original em bytes
-- **Saída:** lista de imagens 28x28px em bytes, cada uma com:
-  - Fundo preto
-  - Caractere branco centralizado
-  - Ordenadas: coluna da direita para esquerda, de cima para baixo
+O adapter atual e mock deterministico. ONNX, PyTorch ou Ultralytics devem entrar atras da mesma interface.
 
----
+## Contrato 4: Classificacao
 
-## Contrato 4 — Interface do agente classificador
+- Arquivo: `backend/app/services/classifier.py`
+- Funcao: `classify_batch(segments: list[KanjiSegment]) -> list[ClassificationResult]`
+- Entrada: batch de segmentos normalizados.
+- Saida: resultados na mesma ordem dos segmentos.
 
-**Arquivo:** `backend/app/services/classifier.py`
-**Função:** `classify_kanji(image_28x28: bytes) -> dict`
-
-- **Entrada:** imagem 28x28px normalizada (bytes)
-- **Saída:**
-```json
-{
-  "old_kanji": "龍",
-  "modern_kanji": "竜",
-  "confidence": 0.97,
-  "bounding_box": { "x": 120, "y": 45, "w": 28, "h": 28 }
-}
-```
+O uso de batch evita overhead de chamada por kanji e prepara o caminho para inferencia vetorizada.

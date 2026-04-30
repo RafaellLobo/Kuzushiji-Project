@@ -1,28 +1,35 @@
-# =============================================================================
-# Módulo de tradução — Japonês moderno → Inglês
-# =============================================================================
-# Usando MyMemory API (gratuita, sem necessidade de chave).
-# Para produção, considere substituir por DeepL ou Google Translate.
-# =============================================================================
+from __future__ import annotations
 
 import httpx
 
-def translate_to_english(japanese_text: str) -> str:
-    """
-    Recebe texto em japonês moderno.
-    Retorna tradução em inglês.
-    """
-    url = "https://api.mymemory.translated.net/get"
-    params = {"q": japanese_text, "langpair": "ja|en"}
+from app.services.errors import TranslationFailedError
 
-    response = httpx.get(url, params=params, timeout=10)
-    response.raise_for_status()
 
-    data = response.json()
-    return data["responseData"]["translatedText"]
+class TranslationService:
+    def __init__(self, http_client: httpx.AsyncClient) -> None:
+        self.http_client = http_client
 
-def translate_to_english(japanese_text: str) -> str:
-    # Simula a tradução do japonês moderno para o inglês
-    if japanese_text == "春夜夢":
-        return "A spring night's dream"
-    return "Placeholder for English translation."
+    async def translate_to_english(self, japanese_text: str) -> str:
+        if not japanese_text:
+            return ""
+
+        # Explicit local fallback keeps the UI functional while translation
+        # provider credentials and quotas are not production-ready.
+        if japanese_text == "春夜夢":
+            return "A spring night's dream"
+
+        url = "https://api.mymemory.translated.net/get"
+        params = {"q": japanese_text, "langpair": "ja|en"}
+
+        try:
+            response = await self.http_client.get(url, params=params)
+            response.raise_for_status()
+            payload = response.json()
+            translated_text = payload["responseData"]["translatedText"]
+        except (httpx.HTTPError, KeyError, TypeError) as exc:
+            raise TranslationFailedError() from exc
+
+        if not isinstance(translated_text, str):
+            raise TranslationFailedError()
+
+        return translated_text
