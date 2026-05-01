@@ -11,6 +11,7 @@ from ultralytics import YOLO
 from app.services.contracts import BoundingBox, ImageMatrix, KanjiSegment
 
 logger = logging.getLogger(__name__)
+DEFAULT_MODEL_PATH = Path(__file__).resolve().parents[1] / "models" / "best.pt"
 
 
 @dataclass(frozen=True, slots=True)
@@ -68,7 +69,14 @@ class SegmentationService:
         margin_px: int = 5,
         column_tolerance_factor: float = 1.5,
     ) -> None:
-        self.model_path = Path(model_path or "app/models/best.pt")
+        resolved_model_path = Path(model_path).resolve() if model_path else DEFAULT_MODEL_PATH
+        if resolved_model_path != DEFAULT_MODEL_PATH:
+            logger.warning(
+                "model_path customizado foi ignorado; usando peso fixo em %s",
+                DEFAULT_MODEL_PATH,
+            )
+
+        self.model_path = DEFAULT_MODEL_PATH
         self.confidence_threshold = confidence_threshold
         self.character_size = character_size
         self.margin_px = margin_px
@@ -117,7 +125,7 @@ class SegmentationService:
 
         segments: list[KanjiSegment] = []
 
-        for order, box in enumerate(ordered_boxes, start=1):
+        for box in ordered_boxes:
             crop = self._crop_with_margin(
                 binary_image=binary_image,
                 box=box,
@@ -132,7 +140,7 @@ class SegmentationService:
 
             segments.append(
                 KanjiSegment(
-                    order=order,
+                    order=len(segments) + 1,
                     crop=normalized_crop,
                     bounding_box=box.to_bounding_box(),
                 )
@@ -302,8 +310,12 @@ class SegmentationService:
 
     def _is_valid_crop(self, crop: ImageMatrix) -> bool:
         """Valida o formato final esperado pelo classificador."""
-        return (
+        if not (
             isinstance(crop, np.ndarray)
             and crop.shape == (self.character_size, self.character_size)
             and crop.dtype == np.uint8
-        )
+        ):
+            return False
+
+        unique_values = np.unique(crop)
+        return np.all(np.isin(unique_values, (0, 255))) and bool(np.any(crop == 255))

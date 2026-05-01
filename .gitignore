@@ -12,6 +12,7 @@ backend/app/models/*.pt
 backend/app/models/*.pth
 backend/app/models/*.weights
 backend/app/models/*.onnx
+backend/debug_segments/
 
 # Node
 node_modules/
@@ -22,8 +23,3 @@ frontend/.env
 .DS_Store
 Thumbs.db
 *.log
-
-
-backend/debug_segments/
-backend/app/models/*.pt
-backend/app/models/*.onnx
