@@ -32,8 +32,8 @@ export const useTranslation = () => {
         const errorCode = data?.error?.code ?? "TRANSLATION_ERROR";
         const errorMessage =
           errorCode === "NO_KANJI_FOUND"
-            ? "Nenhum kanji foi detectado na imagem. Por favor, tente novamente."
-            : data?.error?.message ?? "Ocorreu um erro ao analisar a imagem.";
+            ? "No kanji were detected in the image. Please try again."
+            : data?.error?.message ?? "An error occurred while analyzing the image.";
 
         setError({
           code: errorCode,
@@ -45,15 +45,15 @@ export const useTranslation = () => {
 
       setError({
         code: data?.error?.code ?? "API_ERROR",
-        message: data?.error?.message ?? "Ocorreu um erro ao analisar a imagem.",
+        message: data?.error?.message ?? "An error occurred while analyzing the image.",
       });
       setIsTranslating(false);
       return null;
     } catch (err) {
-      console.error("Erro de conexão:", err);
+      console.error("Connection error:", err);
       setError({
         code: "CONNECTION_ERROR",
-        message: "Não foi possível conectar ao servidor. Verifique se a API está rodando.",
+        message: "Could not connect to the server. Please check if the API is running.",
       });
       setIsTranslating(false);
       return null;

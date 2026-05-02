@@ -11,7 +11,7 @@ export const useCamera = (onCapture) => {
 
   const stopCamera = useCallback(() => {
     if (streamRef.current) {
-      streamRef.current.getTracks().forEach(track => track.stop());
+      streamRef.current.getTracks().forEach((track) => track.stop());
       streamRef.current = null;
     }
     setIsCameraOpen(false);
@@ -29,7 +29,7 @@ export const useCamera = (onCapture) => {
         if (blob) {
           const file = new File([blob], "camera_capture.jpg", { type: "image/jpeg" });
           stopCamera();
-          if (onCapture) onCapture(file); // Devolve a foto pronta pro componente pai
+          if (onCapture) onCapture(file);
         }
       }, "image/jpeg", 0.9);
     }
@@ -40,18 +40,18 @@ export const useCamera = (onCapture) => {
       if (isCameraOpen && videoRef.current) {
         try {
           const stream = await navigator.mediaDevices.getUserMedia({
-            video: { width: { ideal: 1280 }, height: { ideal: 720 } }
+            video: { width: { ideal: 1280 }, height: { ideal: 720 } },
           });
-          
+
           streamRef.current = stream;
           videoRef.current.srcObject = stream;
-          
+
           videoRef.current.onloadedmetadata = () => {
-            videoRef.current.play().catch(e => console.error("Erro ao dar play:", e));
+            videoRef.current.play().catch((e) => console.error("Video playback error:", e));
           };
         } catch (err) {
-          console.error("Erro ao conectar câmera:", err);
-          alert("Erro ao ligar a câmera. Verifique se outro app está usando ela.");
+          console.error("Camera connection error:", err);
+          alert("Could not start the camera. Check whether another app is already using it.");
         }
       }
     };
@@ -60,18 +60,17 @@ export const useCamera = (onCapture) => {
 
     return () => {
       if (streamRef.current) {
-        streamRef.current.getTracks().forEach(track => track.stop());
+        streamRef.current.getTracks().forEach((track) => track.stop());
         streamRef.current = null;
       }
     };
   }, [isCameraOpen]);
 
-  // Retornamos apenas o que o componente visual vai precisar usar
   return {
     isCameraOpen,
     videoRef,
     startCamera,
     stopCamera,
-    capturePhoto
+    capturePhoto,
   };
 };

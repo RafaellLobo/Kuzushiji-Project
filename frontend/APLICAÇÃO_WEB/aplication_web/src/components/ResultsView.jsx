@@ -7,7 +7,7 @@ const ResultsView = ({
   error,
   onStartTranslation,
   onRevealEnglish,
-  onReset
+  onReset,
 }) => {
   const hasError = state === "preview" && error;
 
@@ -41,7 +41,7 @@ const ResultsView = ({
             {!hasError && state === "preview" && (
               <div className="text-center opacity-60">
                 <p className="font-display text-lg mb-2">Ready for analysis.</p>
-                <p className="text-sm">Click "Iniciar Tradução" to begin.</p>
+                <p className="text-sm">Click "Start Translation" to begin.</p>
               </div>
             )}
 
@@ -79,7 +79,7 @@ const ResultsView = ({
                 onClick={onStartTranslation}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-deepCrimson text-white font-display text-sm rounded-none hover:bg-deepCrimson/90 transition-all shadow-md"
               >
-                Iniciar Tradução <ArrowRight className="w-4 h-4" />
+                Start Translation <ArrowRight className="w-4 h-4" />
               </button>
             ) : (
               <button
