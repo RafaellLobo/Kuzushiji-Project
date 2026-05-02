@@ -1,20 +1,18 @@
 import { useState, useRef, useCallback } from "react";
 
-// HOOKS
 import { useCamera } from "../hooks/useCamera";
 import { useTranslation } from "../hooks/useTranslation";
 
-// VIEWS
 import CameraView from "./CameraView";
 import DropzoneView from "./DropzoneView";
 import ResultsView from "./ResultsView";
 
 const UploadArea = () => {
-  const [state, setState] = useState("idle"); 
+  const [state, setState] = useState("idle");
   const [previewUrl, setPreviewUrl] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [translationData, setTranslationData] = useState(null);
-  
+
   const fileInputRef = useRef(null);
 
   const handleFile = useCallback((file) => {
@@ -22,23 +20,26 @@ const UploadArea = () => {
     const url = URL.createObjectURL(file);
     setPreviewUrl(url);
     setSelectedFile(file);
+    setTranslationData(null);
     setState("preview");
   }, []);
 
   const { isCameraOpen, videoRef, startCamera, stopCamera, capturePhoto } = useCamera(handleFile);
-  const { translateImage } = useTranslation();
+  const { translateImage, error } = useTranslation();
 
   const handleStartTranslation = async () => {
     if (!selectedFile) return;
-    setState("loading"); 
+    setState("loading");
     const data = await translateImage(selectedFile);
+
     if (data) {
       setTranslationData(data);
-      setState("results_jp"); 
-    } else {
-      alert("Erro ao traduzir. Verifique se a API está rodando.");
-      setState("preview"); 
+      setState("results_jp");
+      return;
     }
+
+    setTranslationData(null);
+    setState("preview");
   };
 
   const handleRevealEnglish = () => setState("results_en");
@@ -85,25 +86,26 @@ const UploadArea = () => {
                 <div className="absolute inset-4 rounded-full bg-deepCrimson/20 animate-ink-spread" style={{ animationDelay: "1s" }} />
               </div>
               <p className="font-display text-lg text-foreground">Analyzing ancient writing...</p>
-              <p className="text-muted-foreground text-sm mt-2">墨跡を解読中</p>
+              <p className="text-muted-foreground text-sm mt-2">解析中</p>
             </div>
           ) : state !== "idle" && state !== "dragging" ? (
-            <ResultsView 
+            <ResultsView
               state={state}
               previewUrl={previewUrl}
               translationData={translationData}
+              error={error}
               onStartTranslation={handleStartTranslation}
               onRevealEnglish={handleRevealEnglish}
               onReset={reset}
             />
           ) : isCameraOpen ? (
-            <CameraView 
-              videoRef={videoRef} 
-              onCapture={capturePhoto} 
-              onCancel={stopCamera} 
+            <CameraView
+              videoRef={videoRef}
+              onCapture={capturePhoto}
+              onCancel={stopCamera}
             />
           ) : (
-            <DropzoneView 
+            <DropzoneView
               state={state}
               onDrop={handleDrop}
               onDragOver={handleDragOver}

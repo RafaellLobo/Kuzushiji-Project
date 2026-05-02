@@ -20,18 +20,41 @@ export const useTranslation = () => {
       });
 
       const data = await response.json();
+      console.log("Translation response status:", response.status);
+      console.log("Translation response body:", data);
 
-      if (data.success) {
+      if (response.ok && data.success) {
         setIsTranslating(false);
-        return data.data; // Retorna os dados prontinhos (kanji, jp, en)
-      } else {
-        setError("Ocorreu um erro ao analisar a imagem na API.");
+        return data.data;
+      }
+
+      if (response.ok && data.success === false) {
+        const errorCode = data?.error?.code ?? "TRANSLATION_ERROR";
+        const errorMessage =
+          errorCode === "NO_KANJI_FOUND"
+            ? "Nenhum kanji foi detectado na imagem. Por favor, tente novamente."
+            : data?.error?.message ?? "Ocorreu um erro ao analisar a imagem.";
+
+        setError({
+          code: errorCode,
+          message: errorMessage,
+        });
         setIsTranslating(false);
         return null;
       }
+
+      setError({
+        code: data?.error?.code ?? "API_ERROR",
+        message: data?.error?.message ?? "Ocorreu um erro ao analisar a imagem.",
+      });
+      setIsTranslating(false);
+      return null;
     } catch (err) {
       console.error("Erro de conexão:", err);
-      setError("Não foi possível conectar ao servidor. O back-end está rodando?");
+      setError({
+        code: "CONNECTION_ERROR",
+        message: "Não foi possível conectar ao servidor. Verifique se a API está rodando.",
+      });
       setIsTranslating(false);
       return null;
     }
