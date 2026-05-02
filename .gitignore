@@ -13,6 +13,7 @@ backend/app/models/*.pth
 backend/app/models/*.weights
 backend/app/models/*.onnx
 backend/debug_segments/
+backend/app/models/*.h5
 
 # Node
 node_modules/
