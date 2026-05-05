@@ -57,8 +57,8 @@ class SegmentationService:
         image_bgr: matriz OpenCV BGR em RAM.
 
     Saída:
-        list[KanjiSegment], onde cada crop é uma matriz 28x28,
-        fundo preto e caractere branco.
+        list[KanjiSegment], onde cada crop é uma matriz 28x28 uint8,
+        fundo preto e caractere em tons de cinza, parecido com KMNIST.
     """
 
     def __init__(
@@ -66,8 +66,12 @@ class SegmentationService:
         model_path: str | Path | None = None,
         confidence_threshold: float = 0.5,
         character_size: int = 28,
-        margin_px: int = 5,
+        margin_px: int = 2,
         column_tolerance_factor: float = 1.5,
+        min_component_area: int = 4,
+        adaptive_block_size: int = 31,
+        adaptive_c: int = 10,
+        output_mode: str = "grayscale",
     ) -> None:
         resolved_model_path = Path(model_path).resolve() if model_path else DEFAULT_MODEL_PATH
         if resolved_model_path != DEFAULT_MODEL_PATH:
@@ -81,6 +85,10 @@ class SegmentationService:
         self.character_size = character_size
         self.margin_px = margin_px
         self.column_tolerance_factor = column_tolerance_factor
+        self.min_component_area = min_component_area
+        self.adaptive_block_size = self._ensure_odd_at_least_3(adaptive_block_size)
+        self.adaptive_c = adaptive_c
+        self.output_mode = output_mode
 
         if not self.model_path.exists():
             raise FileNotFoundError(
@@ -120,20 +128,25 @@ class SegmentationService:
             return []
 
         ordered_boxes = self._sort_boxes_japanese_vertical(boxes)
-
-        binary_image = self._binarize_full_image(image_bgr)
-
         segments: list[KanjiSegment] = []
 
         for box in ordered_boxes:
-            crop = self._crop_with_margin(
-                binary_image=binary_image,
+            crop_bgr = self._crop_original_with_margin(
+                image_bgr=image_bgr,
                 box=box,
                 image_width=image_width,
                 image_height=image_height,
             )
 
-            normalized_crop = self._normalize_to_28x28(crop)
+            ink_gray, ink_mask = self._extract_grayscale_ink(crop_bgr)
+            ink_mask = self._remove_small_components(ink_mask)
+            ink_gray, ink_mask = self._trim_gray_to_mask(ink_gray, ink_mask)
+            normalized_crop = self._normalize_to_28x28(ink_gray)
+
+            if self.output_mode == "binary":
+                _, normalized_crop = cv2.threshold(
+                    normalized_crop, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU
+                )
 
             if not self._is_valid_crop(normalized_crop):
                 continue
@@ -172,13 +185,7 @@ class SegmentationService:
             x2 = int(np.clip(round(x2), 0, image_width))
             y2 = int(np.clip(round(y2), 0, image_height))
 
-            box = DetectedBox(
-                x1=x1,
-                y1=y1,
-                x2=x2,
-                y2=y2,
-                confidence=confidence,
-            )
+            box = DetectedBox(x1=x1, y1=y1, x2=x2, y2=y2, confidence=confidence)
 
             if box.width < 2 or box.height < 2:
                 continue
@@ -189,10 +196,8 @@ class SegmentationService:
 
     def _sort_boxes_japanese_vertical(self, boxes: list[DetectedBox]) -> list[DetectedBox]:
         """
-        Ordena os caracteres no padrão japonês vertical:
-
-        1. Colunas da direita para a esquerda.
-        2. Dentro de cada coluna, caracteres de cima para baixo.
+        Ordena no padrão japonês vertical:
+        colunas da direita para a esquerda e, dentro de cada coluna, de cima para baixo.
         """
         if not boxes:
             return []
@@ -202,120 +207,201 @@ class SegmentationService:
         column_tolerance = median_width * self.column_tolerance_factor
 
         columns: list[list[DetectedBox]] = []
-
-        # Primeiro percorre da direita para a esquerda.
-        boxes_by_x = sorted(boxes, key=lambda box: box.x_center, reverse=True)
-
-        for box in boxes_by_x:
-            matched_column: list[DetectedBox] | None = None
-
+        for box in sorted(boxes, key=lambda b: b.x_center, reverse=True):
             for column in columns:
                 column_center = float(np.mean([item.x_center for item in column]))
-
                 if abs(box.x_center - column_center) <= column_tolerance:
-                    matched_column = column
+                    column.append(box)
                     break
-
-            if matched_column is None:
-                columns.append([box])
             else:
-                matched_column.append(box)
+                columns.append([box])
 
-        # Ordena colunas pela média de X, da direita para a esquerda.
         columns.sort(
-            key=lambda column: float(np.mean([box.x_center for box in column])),
+            key=lambda col: float(np.mean([b.x_center for b in col])),
             reverse=True,
         )
 
-        ordered_boxes: list[DetectedBox] = []
+        return [box for col in columns for box in sorted(col, key=lambda b: b.y_center)]
 
-        for column in columns:
-            # Dentro da coluna, leitura de cima para baixo.
-            ordered_boxes.extend(sorted(column, key=lambda box: box.y_center))
-
-        return ordered_boxes
-
-    def _binarize_full_image(self, image_bgr: ImageMatrix) -> ImageMatrix:
-        """
-        Converte imagem BGR para binária:
-
-        fundo preto = 0
-        caractere/tinta = 255
-        """
-        gray = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2GRAY)
-
-        _, binary = cv2.threshold(
-            gray,
-            0,
-            255,
-            cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU,
-        )
-
-        return binary
-
-    def _crop_with_margin(
+    def _crop_original_with_margin(
         self,
-        binary_image: ImageMatrix,
+        image_bgr: ImageMatrix,
         box: DetectedBox,
         image_width: int,
         image_height: int,
     ) -> ImageMatrix:
-        """Recorta o caractere da imagem binária usando margem segura."""
+        """Recorta da imagem original com margem."""
         x1 = max(0, box.x1 - self.margin_px)
         y1 = max(0, box.y1 - self.margin_px)
         x2 = min(image_width, box.x2 + self.margin_px)
         y2 = min(image_height, box.y2 + self.margin_px)
+        return image_bgr[y1:y2, x1:x2]
 
-        return binary_image[y1:y2, x1:x2]
+    def _extract_grayscale_ink(self, crop_bgr: ImageMatrix) -> tuple[ImageMatrix, ImageMatrix]:
+        """
+        Extrai a tinta em tons de cinza e cria uma máscara binária auxiliar.
+
+        Usa subtração de fundo local para realçar a tinta escura sobre papel,
+        preservando tons intermediários (sem converter para binário aqui).
+        """
+        if crop_bgr is None or crop_bgr.size == 0:
+            empty = np.zeros((self.character_size, self.character_size), dtype=np.uint8)
+            return empty, empty
+
+        gray = cv2.cvtColor(crop_bgr, cv2.COLOR_BGR2GRAY)
+        gray = cv2.GaussianBlur(gray, (3, 3), 0)
+
+        h, w = gray.shape[:2]
+        k = max(7, int(round(min(h, w) * 0.35)) | 1)  # garante ímpar
+        background = cv2.GaussianBlur(gray, (k, k), 0)
+
+        # Realça tinta escura: pixels mais escuros que o fundo local ficam positivos.
+        ink = cv2.subtract(background, gray)
+
+        # Estica contraste até o percentil 99 para evitar saturação por ruído.
+        nonzero = ink[ink > 0]
+        if nonzero.size > 0:
+            high = float(np.percentile(nonzero, 50))
+            if high > 0:
+                ink = np.clip((ink.astype(np.float32) / high) * 255.0, 0, 255).astype(np.uint8)
+
+        # Máscara binária apenas para localizar a tinta (não é a saída final).
+        block_size = self._ensure_odd_at_least_3(min(self.adaptive_block_size, h, w))
+        if block_size < 3 or h < 3 or w < 3:
+            _, mask = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+        else:
+            mask = cv2.adaptiveThreshold(
+                gray,
+                255,
+                cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                cv2.THRESH_BINARY_INV,
+                block_size,
+                self.adaptive_c,
+            )
+
+        ink = cv2.bitwise_and(ink, ink, mask=mask)
+        return ink, mask
+
+    def _remove_small_components(self, binary: ImageMatrix) -> ImageMatrix:
+        """Remove ruídos pequenos preservando componentes maiores de tinta."""
+        if binary is None or binary.size == 0:
+            return binary
+
+        num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(binary, connectivity=8)
+        cleaned = np.zeros_like(binary)
+        for label in range(1, num_labels):
+            if int(stats[label, cv2.CC_STAT_AREA]) >= self.min_component_area:
+                cleaned[labels == label] = 255
+        return cleaned
+
+    def _trim_gray_to_mask(
+        self,
+        gray_ink: ImageMatrix,
+        mask: ImageMatrix,
+    ) -> tuple[ImageMatrix, ImageMatrix]:
+        """Recorta a imagem em tons de cinza usando a máscara de tinta."""
+        if gray_ink is None or gray_ink.size == 0 or mask is None or mask.size == 0:
+            return gray_ink, mask
+
+        ys, xs = np.where(mask > 0)
+        if len(xs) == 0 or len(ys) == 0:
+            return gray_ink, mask
+
+        x1, x2 = int(xs.min()), int(xs.max()) + 1
+        y1, y2 = int(ys.min()), int(ys.max()) + 1
+        return gray_ink[y1:y2, x1:x2], mask[y1:y2, x1:x2]
 
     def _normalize_to_28x28(self, crop: ImageMatrix) -> ImageMatrix:
         """
-        Normaliza o crop para 28x28 mantendo proporção e usando padding preto.
+        Normaliza o crop para 28x28 mantendo proporção,
+        centraliza por centro de massa e reforça contraste.
         """
-        target_size = self.character_size
+        target = self.character_size
 
         if crop is None or crop.size == 0:
-            return np.zeros((target_size, target_size), dtype=np.uint8)
+            return np.zeros((target, target), dtype=np.uint8)
 
-        height, width = crop.shape[:2]
+        gray = cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY) if len(crop.shape) == 3 else crop
+        gray = gray.astype(np.uint8)
 
-        if height == 0 or width == 0:
-            return np.zeros((target_size, target_size), dtype=np.uint8)
+        h, w = gray.shape[:2]
+        if h == 0 or w == 0:
+            return np.zeros((target, target), dtype=np.uint8)
 
-        scale = min(target_size / height, target_size / width)
+        inner = target - 4
+        scale = min(inner / h, inner / w)
 
-        new_width = max(1, int(round(width * scale)))
-        new_height = max(1, int(round(height * scale)))
+        new_w = max(1, int(round(w * scale)))
+        new_h = max(1, int(round(h * scale)))
 
-        resized = cv2.resize(
-            crop,
-            (new_width, new_height),
-            interpolation=cv2.INTER_AREA,
-        )
+        interp = cv2.INTER_AREA if scale < 1 else cv2.INTER_CUBIC
+        resized = cv2.resize(gray, (new_w, new_h), interpolation=interp)
 
-        # Garante novamente 0/255 após resize.
-        _, resized = cv2.threshold(resized, 127, 255, cv2.THRESH_BINARY)
+        # Remove ruído muito fraco antes de aumentar contraste
+        resized[resized < 6] = 0
 
-        canvas = np.zeros((target_size, target_size), dtype=np.uint8)
+        # Expande contraste por percentil
+        nz = resized[resized > 0]
+        if nz.size > 0:
+            high = np.percentile(nz, 95)
+            if high > 0:
+                resized = np.clip(
+                    resized.astype(np.float32) * (255.0 / high),
+                    0,
+                    255,
+                ).astype(np.uint8)
 
-        offset_x = (target_size - new_width) // 2
-        offset_y = (target_size - new_height) // 2
+        # Clareia tons médios
+        gamma = 0.45
+        resized = np.clip(
+            ((resized.astype(np.float32) / 255.0) ** gamma) * 255.0,
+            0,
+            255,
+        ).astype(np.uint8)
 
-        canvas[
-            offset_y : offset_y + new_height,
-            offset_x : offset_x + new_width,
-        ] = resized
+        # Centraliza pelo centro de massa
+        canvas = np.zeros((target, target), dtype=np.uint8)
+
+        m = cv2.moments(resized)
+        cx = int(m["m10"] / m["m00"]) if m["m00"] != 0 else new_w // 2
+        cy = int(m["m01"] / m["m00"]) if m["m00"] != 0 else new_h // 2
+
+        ox = (target // 2) - cx
+        oy = (target // 2) - cy
+
+        x1 = max(0, ox)
+        y1 = max(0, oy)
+        x2 = min(target, ox + new_w)
+        y2 = min(target, oy + new_h)
+
+        sx = max(0, -ox)
+        sy = max(0, -oy)
+
+        canvas[y1:y2, x1:x2] = resized[
+                               sy:sy + (y2 - y1),
+                               sx:sx + (x2 - x1),
+                               ]
+
+        # Engrossa levemente o traço no final
+        kernel = np.ones((2, 2), np.uint8)
+        canvas = cv2.dilate(canvas, kernel, iterations=1)
+
+        # Remove ruído residual criado pela interpolação/dilatação
+        canvas[canvas < 8] = 0
 
         return canvas
 
     def _is_valid_crop(self, crop: ImageMatrix) -> bool:
         """Valida o formato final esperado pelo classificador."""
-        if not (
+        return (
             isinstance(crop, np.ndarray)
             and crop.shape == (self.character_size, self.character_size)
             and crop.dtype == np.uint8
-        ):
-            return False
+            and bool(np.any(crop > 0))
+        )
 
-        unique_values = np.unique(crop)
-        return np.all(np.isin(unique_values, (0, 255))) and bool(np.any(crop == 255))
+    @staticmethod
+    def _ensure_odd_at_least_3(value: int) -> int:
+        """Garante valor ímpar >= 3 para adaptiveThreshold."""
+        value = max(3, int(value))
+        return value if value % 2 != 0 else value - 1
