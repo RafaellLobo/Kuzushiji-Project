@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 from app.services.contracts import ClassificationResult, KanjiSegment
 
@@ -46,6 +47,7 @@ class ClassificationService:
         try:
             import tensorflow as tf
             from tensorflow.keras.models import load_model
+
         except ModuleNotFoundError as exc:
             raise ModuleNotFoundError(
                 "TensorFlow nao esta instalado. Adicione a dependencia do TensorFlow "
@@ -57,6 +59,24 @@ class ClassificationService:
 
         self.model = load_model(self.model_path, compile=False)
         self.class_labels = self._load_class_labels(self.classmap_path)
+
+    def debug_predict_crop(self, crop: np.ndarray, top_k: int = 5) -> list[tuple[str, float]]:
+        if crop.shape != (28, 28):
+            raise ValueError(f"Esperado crop 28x28, recebido {crop.shape}")
+
+        batch = crop.astype(np.float32) / 255.0
+        batch = np.expand_dims(batch, axis=0)
+        batch = np.expand_dims(batch, axis=-1)
+
+        probs = self.model.predict(batch, verbose=0)[0]
+
+        top_indexes = np.argsort(probs)[::-1][:top_k]
+
+        results = []
+        for idx in top_indexes:
+            results.append((self.class_labels[int(idx)], float(probs[int(idx)])))
+
+        return results
 
     def classify_batch(self, segments: list[KanjiSegment]) -> list[ClassificationResult]:
         if not segments:
@@ -109,6 +129,10 @@ class ClassificationService:
                 "Entrada invalida do classificador: esperado batch final com shape "
                 f"({len(segments)}, 28, 28, 1), recebido {batch.shape}."
             )
+        #
+        plt.imshow(crops[0], cmap='gray')
+        plt.title(f"Isso parece um KMINST real? {crops[0].shape}")
+        plt.show()
 
         return batch
 
@@ -163,3 +187,4 @@ def _get_default_service() -> ClassificationService:
         _default_service = ClassificationService()
 
     return _default_service
+
