@@ -19,6 +19,7 @@ backend/app/models/*.h5
 node_modules/
 frontend/dist/
 frontend/.env
+frontend/APLICAÇÃO_WEB/aplication_web/.env.local
 
 # Sistema
 .DS_Store

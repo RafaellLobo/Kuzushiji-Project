@@ -19,9 +19,12 @@ export const useCamera = (onCapture) => {
 
   const capturePhoto = useCallback(() => {
     if (videoRef.current) {
+      const { videoWidth, videoHeight } = videoRef.current;
+      if (!videoWidth || !videoHeight) return;
+
       const canvas = document.createElement("canvas");
-      canvas.width = videoRef.current.videoWidth;
-      canvas.height = videoRef.current.videoHeight;
+      canvas.width = videoWidth;
+      canvas.height = videoHeight;
       const ctx = canvas.getContext("2d");
       ctx.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
 
@@ -31,7 +34,7 @@ export const useCamera = (onCapture) => {
           stopCamera();
           if (onCapture) onCapture(file);
         }
-      }, "image/jpeg", 0.9);
+      }, "image/jpeg", 0.95);
     }
   }, [onCapture, stopCamera]);
 
@@ -40,7 +43,11 @@ export const useCamera = (onCapture) => {
       if (isCameraOpen && videoRef.current) {
         try {
           const stream = await navigator.mediaDevices.getUserMedia({
-            video: { width: { ideal: 1280 }, height: { ideal: 720 } },
+            video: {
+              facingMode: { ideal: "environment" },
+              width: { ideal: 1280 },
+              height: { ideal: 720 },
+            },
           });
 
           streamRef.current = stream;

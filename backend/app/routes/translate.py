@@ -1,12 +1,18 @@
+import os
+
 from fastapi import APIRouter, File, HTTPException, Request, UploadFile
 
 from app.services.errors import PipelineError
+from app.services.translation_pipeline import build_demo_translation_response
 
 router = APIRouter(prefix="/translate", tags=["translate"])
 
 
 @router.post("")
 async def translate(request: Request, image: UploadFile = File(...)):
+    if os.getenv("DEMO_TRANSLATION_MODE", "").lower() == "true":
+        return build_demo_translation_response()
+
     image_bytes = await image.read()
 
     try:

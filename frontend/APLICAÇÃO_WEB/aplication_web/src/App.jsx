@@ -6,7 +6,7 @@ import washiTexture from "./assets/washi-texture.jpg";
 function App() {
   return (
     <div
-      className="relative min-h-screen flex flex-col bg-stone-200"
+      className="relative min-h-dvh overflow-x-hidden flex flex-col bg-stone-200"
       style={{
 
         backgroundImage: `url(${washiTexture})`, 
@@ -19,12 +19,12 @@ function App() {
       <SakuraAnimation />
 
       
-      <header className="relative z-10 text-center pt-12 sm:pt-16 pb-6 px-4">
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground tracking-wide mb-2">
+      <header className="relative z-10 text-center pt-4 sm:pt-16 pb-2 sm:pb-6 px-3 sm:px-4">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl text-foreground tracking-wide mb-1 sm:mb-2">
           <span className="text-primary">崩</span>し字認識
         </h1>
 
-        <h2 className="font-display text-2xl sm:text-3xl text-foreground/90 mb-3">
+        <h2 className="font-display text-xl sm:text-3xl text-foreground/90 mb-2 sm:mb-3">
           Kuzushiji Recognition
         </h2>
 
@@ -32,8 +32,8 @@ function App() {
           Upload or capture ancient Japanese text from the Edo period
         </p>
 
-        <div className="mt-6 flex justify-center">
-          <svg width="200" height="20" viewBox="0 0 200 20" className="opacity-30">
+        <div className="mt-2 sm:mt-6 flex justify-center">
+          <svg width="200" height="20" viewBox="0 0 200 20" className="w-32 sm:w-[200px] opacity-30">
             {[0, 25, 50, 75, 100, 125, 150, 175].map((x) => (
               <path
                 key={x}
@@ -48,11 +48,11 @@ function App() {
       </header>
 
       
-      <main className="relative z-10 flex-1 flex items-start justify-center pb-12 sm:pb-16">
+      <main className="relative z-10 flex-1 flex items-start justify-center pb-3 sm:pb-16">
         <UploadArea />
       </main>
 
-      <footer className="relative z-10 text-center py-6 px-4 border-t border-border/40">
+      <footer className="relative z-10 text-center py-2 sm:py-6 px-3 sm:px-4 border-t border-border/40">
         <p className="text-xs text-muted-foreground font-display">
           古文書 · Kuzushiji Recognition · Edo Period Script Analysis
         </p>

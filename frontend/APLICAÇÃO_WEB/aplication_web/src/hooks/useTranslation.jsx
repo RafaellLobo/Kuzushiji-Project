@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const API_BASE_URL = (import.meta.env.VITE_API_URL ?? "http://localhost:8000").replace(/\/$/, "");
+
 export const useTranslation = () => {
   const [isTranslating, setIsTranslating] = useState(false);
   const [error, setError] = useState(null);
@@ -14,7 +16,7 @@ export const useTranslation = () => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://localhost:8000/translate", {
+      const response = await fetch(`${API_BASE_URL}/translate`, {
         method: "POST",
         body: formData,
       });

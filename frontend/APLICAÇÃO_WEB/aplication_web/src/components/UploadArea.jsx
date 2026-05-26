@@ -73,14 +73,14 @@ const UploadArea = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4">
-      <div className="relative bg-card backdrop-blur-sm border-4 border-border rounded-none shadow-xl overflow-hidden">
-        <div className="h-3 bg-gradient-to-r from-gold/40 via-gold/70 to-gold/40 border-b border-border/50" />
+    <div className="w-full max-w-none md:max-w-4xl mx-auto px-1.5 sm:px-4">
+      <div className="relative bg-card backdrop-blur-sm border-2 sm:border-4 border-border rounded-none shadow-xl overflow-hidden">
+        <div className="h-2 sm:h-3 bg-gradient-to-r from-gold/40 via-gold/70 to-gold/40 border-b border-border/50" />
 
-        <div className="p-6 sm:p-10">
+        <div className="p-3 sm:p-10">
           {state === "loading" ? (
-            <div className="flex flex-col items-center justify-center py-16 animate-fade-in">
-              <div className="relative w-24 h-24 mb-6">
+            <div className="flex flex-col items-center justify-center py-8 sm:py-16 animate-fade-in">
+              <div className="relative w-16 h-16 sm:w-24 sm:h-24 mb-3 sm:mb-6">
                 <div className="absolute inset-0 rounded-full bg-deepCrimson/10 animate-ink-spread" />
                 <div className="absolute inset-2 rounded-full bg-deepCrimson/15 animate-ink-spread" style={{ animationDelay: "0.5s" }} />
                 <div className="absolute inset-4 rounded-full bg-deepCrimson/20 animate-ink-spread" style={{ animationDelay: "1s" }} />
@@ -116,7 +116,7 @@ const UploadArea = () => {
             />
           )}
         </div>
-        <div className="h-3 bg-gradient-to-r from-gold/40 via-gold/70 to-gold/40 border-t border-border/50" />
+        <div className="h-2 sm:h-3 bg-gradient-to-r from-gold/40 via-gold/70 to-gold/40 border-t border-border/50" />
       </div>
     </div>
   );

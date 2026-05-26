@@ -4,6 +4,7 @@ from time import perf_counter
 from typing import Any
 
 from app.services.classifier import ClassificationService
+from app.services.contracts import BoundingBox
 from app.services.errors import ClassifierNotIntegratedError, NoKanjiFoundError
 from app.services.image_decoder import ImageDecoder
 from app.services.translator import TranslationService
@@ -52,6 +53,51 @@ class TranslationPipeline:
             },
             "error": None,
         }
+
+
+def build_demo_translation_response() -> dict[str, Any]:
+    demo_characters = [
+        {
+            "order": 1,
+            "old_kanji": "春",
+            "modern_kanji": "春",
+            "confidence": 0.98,
+            "bounding_box": BoundingBox(x=120, y=80, w=32, h=36).to_dict(),
+        },
+        {
+            "order": 2,
+            "old_kanji": "風",
+            "modern_kanji": "風",
+            "confidence": 0.97,
+            "bounding_box": BoundingBox(x=120, y=125, w=30, h=34).to_dict(),
+        },
+        {
+            "order": 3,
+            "old_kanji": "花",
+            "modern_kanji": "花",
+            "confidence": 0.96,
+            "bounding_box": BoundingBox(x=120, y=168, w=31, h=35).to_dict(),
+        },
+        {
+            "order": 4,
+            "old_kanji": "鳥",
+            "modern_kanji": "鳥",
+            "confidence": 0.95,
+            "bounding_box": BoundingBox(x=120, y=212, w=33, h=37).to_dict(),
+        },
+    ]
+
+    return {
+        "success": True,
+        "data": {
+            "characters": demo_characters,
+            "japanese_text": "春風花鳥",
+            "english_translation": "Spring breeze, flowers and birds.",
+            "processing_time_ms": 42.0,
+            "demo_mode": True,
+        },
+        "error": None,
+    }
 
 
 def build_translation_pipeline(translation_service: TranslationService) -> TranslationPipeline:

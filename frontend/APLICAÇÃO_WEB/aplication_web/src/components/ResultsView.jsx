@@ -13,50 +13,50 @@ const ResultsView = ({
 
   return (
     <div className="animate-fade-in">
-      <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+      <div className="flex flex-col md:flex-row gap-3 sm:gap-6 md:gap-8">
         <div className="md:w-1/2 flex flex-col items-center">
           <div className="w-full border-2 border-border rounded-none p-2 bg-background/50 shadow-md">
             <img
               src={previewUrl}
               alt="Uploaded kuzushiji text"
-              className="w-full h-auto max-h-96 object-contain rounded-none"
+              className="w-full h-auto max-h-[38dvh] sm:max-h-96 object-contain rounded-none"
             />
           </div>
-          <p className="font-display text-xs text-muted-foreground mt-3">Original Document</p>
+          <p className="font-display text-xs text-muted-foreground mt-1.5 sm:mt-3">Original Document</p>
         </div>
 
         <div className="md:w-1/2 flex flex-col">
-          <h3 className="font-display text-lg text-foreground mb-3 border-b border-border pb-2">
+          <h3 className="font-display text-base sm:text-lg text-foreground mb-2 sm:mb-3 border-b border-border pb-2">
             <span className="text-deepCrimson">Transcription</span>
           </h3>
 
-          <div className="flex-1 bg-background/60 border border-border rounded-none p-5 mb-5 min-h-[200px] shadow-inner flex flex-col justify-center">
+          <div className="flex-1 bg-background/60 border border-border rounded-none p-3 sm:p-5 mb-3 sm:mb-5 min-h-[132px] sm:min-h-[200px] shadow-inner flex flex-col justify-center">
             {hasError && (
               <div className="text-center text-foreground animate-fade-in">
-                <p className="font-display text-lg mb-2 text-deepCrimson">Unable to analyze this image.</p>
+                <p className="font-display text-base sm:text-lg mb-2 text-deepCrimson">Unable to analyze this image.</p>
                 <p className="text-sm leading-relaxed">{error.message}</p>
               </div>
             )}
 
             {!hasError && state === "preview" && (
               <div className="text-center opacity-60">
-                <p className="font-display text-lg mb-2">Ready for analysis.</p>
+                <p className="font-display text-base sm:text-lg mb-2">Ready for analysis.</p>
                 <p className="text-sm">Click "Start Translation" to begin.</p>
               </div>
             )}
 
             {(state === "results_jp" || state === "results_en") && translationData && (
-              <div className="space-y-4 animate-fade-in w-full">
+              <div className="space-y-3 sm:space-y-4 animate-fade-in w-full">
                 <div>
                   <h4 className="text-sm font-bold text-deepCrimson mb-1">Kanji Detected:</h4>
-                  <p className="font-display text-lg tracking-widest text-foreground">
+                  <p className="font-display text-base sm:text-lg tracking-widest text-foreground break-words">
                     {translationData.characters.map((character) => character.old_kanji).join("  ")}
                   </p>
                 </div>
 
                 <div className="pt-2 border-t border-border/50">
                   <h4 className="text-sm font-bold text-deepCrimson mb-1">Modern Japanese:</h4>
-                  <p className="font-display text-foreground leading-relaxed">
+                  <p className="font-display text-foreground leading-relaxed break-words">
                     {translationData.japanese_text}
                   </p>
                 </div>
@@ -64,7 +64,7 @@ const ResultsView = ({
                 {state === "results_en" && (
                   <div className="pt-2 border-t border-border/50 animate-fade-in">
                     <h4 className="text-sm font-bold text-deepCrimson mb-1">Translation (English):</h4>
-                    <p className="font-display text-foreground leading-relaxed italic">
+                    <p className="font-display text-foreground leading-relaxed italic break-words">
                       {translationData.english_translation}
                     </p>
                   </div>
@@ -99,10 +99,10 @@ const ResultsView = ({
         </div>
       </div>
 
-      <div className="flex justify-center mt-8 pt-5 border-t border-border/50">
+      <div className="flex justify-center mt-4 sm:mt-8 pt-3 sm:pt-5 border-t border-border/50">
         <button
           onClick={onReset}
-          className="flex items-center gap-2 px-5 py-2 text-muted-foreground hover:text-foreground font-display text-sm transition-colors duration-300"
+          className="flex items-center justify-center gap-2 px-5 py-2 text-muted-foreground hover:text-foreground font-display text-sm transition-colors duration-300"
         >
           <RotateCcw className="w-4 h-4" />
           Upload Another Document
