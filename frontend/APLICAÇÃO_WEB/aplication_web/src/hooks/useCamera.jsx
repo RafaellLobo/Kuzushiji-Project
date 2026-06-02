@@ -2,18 +2,21 @@ import { useState, useRef, useEffect, useCallback } from "react";
 
 export const useCamera = (onCapture) => {
   const [isCameraOpen, setIsCameraOpen] = useState(false);
+  const [cameraError, setCameraError] = useState(null);
   const videoRef = useRef(null);
   const streamRef = useRef(null);
 
   const startCamera = useCallback(() => {
+    setCameraError(null);
     setIsCameraOpen(true);
-  }, []);
+  }, []); 
 
   const stopCamera = useCallback(() => {
     if (streamRef.current) {
       streamRef.current.getTracks().forEach((track) => track.stop());
       streamRef.current = null;
     }
+    setCameraError(null);
     setIsCameraOpen(false);
   }, []);
 
@@ -58,7 +61,8 @@ export const useCamera = (onCapture) => {
           };
         } catch (err) {
           console.error("Camera connection error:", err);
-          alert("Could not start the camera. Check whether another app is already using it.");
+          setCameraError("Could not start the camera. Check browser permission or whether another app is already using it.");
+          setIsCameraOpen(false);
         }
       }
     };
@@ -75,6 +79,7 @@ export const useCamera = (onCapture) => {
 
   return {
     isCameraOpen,
+    cameraError,
     videoRef,
     startCamera,
     stopCamera,

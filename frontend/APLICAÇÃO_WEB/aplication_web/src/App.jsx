@@ -48,7 +48,7 @@ function App() {
       </header>
 
       
-      <main className="relative z-10 flex-1 flex items-start justify-center pb-3 sm:pb-16">
+      <main className="relative z-10 flex-1 flex items-start justify-center w-full px-3 sm:px-4 pb-4 sm:pb-16">
         <UploadArea />
       </main>
 
