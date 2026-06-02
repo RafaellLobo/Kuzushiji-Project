@@ -24,7 +24,7 @@ const UploadArea = () => {
     setState("preview");
   }, []);
 
-  const { isCameraOpen, videoRef, startCamera, stopCamera, capturePhoto } = useCamera(handleFile);
+  const { isCameraOpen, cameraError, videoRef, startCamera, stopCamera, capturePhoto } = useCamera(handleFile);
   const { translateImage, error } = useTranslation();
 
   const handleStartTranslation = async () => {
@@ -73,11 +73,16 @@ const UploadArea = () => {
   };
 
   return (
-    <div className="w-full max-w-none md:max-w-4xl mx-auto px-1.5 sm:px-4">
-      <div className="relative bg-card backdrop-blur-sm border-2 sm:border-4 border-border rounded-none shadow-xl overflow-hidden">
+    <div className="w-full max-w-full md:max-w-4xl mx-auto px-0 sm:px-4">
+      <div className="relative w-full bg-card backdrop-blur-sm border-2 sm:border-4 border-border rounded-xl sm:rounded-none shadow-xl overflow-hidden">
         <div className="h-2 sm:h-3 bg-gradient-to-r from-gold/40 via-gold/70 to-gold/40 border-b border-border/50" />
 
         <div className="p-3 sm:p-10">
+          {cameraError && (
+            <div className="mb-3 rounded-xl border border-deepCrimson/40 bg-deepCrimson/10 p-3 text-sm text-deepCrimson">
+              {cameraError}
+            </div>
+          )}
           {state === "loading" ? (
             <div className="flex flex-col items-center justify-center py-8 sm:py-16 animate-fade-in">
               <div className="relative w-16 h-16 sm:w-24 sm:h-24 mb-3 sm:mb-6">

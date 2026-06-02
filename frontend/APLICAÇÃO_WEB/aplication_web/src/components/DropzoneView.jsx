@@ -16,7 +16,7 @@ const DropzoneView = ({
         onDrop={onDrop}
         onDragOver={onDragOver}
         onDragLeave={onDragLeave}
-        className={`border-2 border-dotted rounded-none p-4 sm:p-12 text-center transition-all duration-300 cursor-pointer group
+        className={`w-full border-2 border-dotted rounded-xl sm:rounded-none p-4 sm:p-12 text-center transition-all duration-300 cursor-pointer group
           ${state === "dragging"
             ? "border-deepCrimson bg-deepCrimson/5 sm:scale-[1.02]"
             : "border-gold/50 hover:border-gold"
@@ -45,14 +45,14 @@ const DropzoneView = ({
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
         <button
           onClick={() => fileInputRef.current?.click()}
-          className="w-full sm:w-auto flex items-center justify-center gap-3 px-6 py-3 bg-deepCrimson text-white font-display rounded-none hover:bg-deepCrimson/90 transition-all duration-300 shadow-md"
+          className="w-full sm:w-auto min-h-12 flex items-center justify-center gap-3 px-6 py-3 bg-deepCrimson text-white font-display rounded-xl sm:rounded-none hover:bg-deepCrimson/90 transition-all duration-300 shadow-md"
         >
           <Upload className="w-5 h-5" /> Upload Image
         </button>
 
         <button
           onClick={onStartCamera}
-          className="w-full sm:w-auto flex items-center justify-center gap-3 px-6 py-3 bg-transparent text-foreground border border-gold font-display rounded-none hover:bg-gold/10 transition-all duration-300 shadow-md"
+          className="w-full sm:w-auto min-h-12 flex items-center justify-center gap-3 px-6 py-3 bg-transparent text-foreground border border-gold font-display rounded-xl sm:rounded-none hover:bg-gold/10 transition-all duration-300 shadow-md"
         >
           <Camera className="w-5 h-5" /> Use Camera
         </button>
