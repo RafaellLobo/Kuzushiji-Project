@@ -11,6 +11,8 @@ const ResultsView = ({
 }) => {
   const hasError = state === "preview" && error;
 
+  console.log(translationData)
+
   return (
     <div className="animate-fade-in">
       <div className="flex flex-col md:flex-row gap-6 md:gap-8">
@@ -51,6 +53,10 @@ const ResultsView = ({
                   <h4 className="text-sm font-bold text-deepCrimson mb-1">Kanji Detected:</h4>
                   <p className="font-display text-lg tracking-widest text-foreground">
                     {translationData.characters.map((character) => character.old_kanji).join("  ")}
+                        比 之 手 者 祢
+                        志 者 而 以 不
+                        所 子
+
                   </p>
                 </div>
 
@@ -58,6 +64,9 @@ const ResultsView = ({
                   <h4 className="text-sm font-bold text-deepCrimson mb-1">Modern Japanese:</h4>
                   <p className="font-display text-foreground leading-relaxed">
                     {translationData.japanese_text}
+                        比 之 手 者 祢
+                        志 者 而 以 不
+                        所 子
                   </p>
                 </div>
 
