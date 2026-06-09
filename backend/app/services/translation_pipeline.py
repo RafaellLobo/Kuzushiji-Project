@@ -26,7 +26,7 @@ class TranslationPipeline:
     async def process(self, image_bytes: bytes, content_type: str | None) -> dict[str, Any]:
         started_at = perf_counter()
         image_bgr = self.image_decoder.decode(image_bytes, content_type)
-        segments = self.segmentation_service.segment_and_normalize(image_bgr)
+        segments = self.segmentation_service.normalize_single_character(image_bgr)
 
         if not segments:
             raise NoKanjiFoundError()

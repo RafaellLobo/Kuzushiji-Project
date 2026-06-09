@@ -72,6 +72,8 @@ class SegmentationService:
         adaptive_block_size: int = 31,
         adaptive_c: int = 10,
         output_mode: str = "grayscale",
+        debug_enabled: bool = True,
+        debug_dir: str | Path = "debug_segmentation",
     ) -> None:
         resolved_model_path = Path(model_path).resolve() if model_path else DEFAULT_MODEL_PATH
         if resolved_model_path != DEFAULT_MODEL_PATH:
@@ -89,6 +91,9 @@ class SegmentationService:
         self.adaptive_block_size = self._ensure_odd_at_least_3(adaptive_block_size)
         self.adaptive_c = adaptive_c
         self.output_mode = output_mode
+        self.debug_enabled = debug_enabled
+        self.debug_dir = Path(debug_dir)
+        self.debug_dir.mkdir(parents=True, exist_ok=True)
 
         if not self.model_path.exists():
             raise FileNotFoundError(
@@ -104,6 +109,7 @@ class SegmentationService:
         Detecta caracteres na imagem completa, ordena na leitura japonesa vertical
         e retorna crops normalizados para 28x28.
         """
+        logger.warning("ENTROU NO yolo_agent.segment_and_normalize")
         if image_bgr is None or image_bgr.size == 0:
             return []
 
@@ -128,6 +134,9 @@ class SegmentationService:
             return []
 
         ordered_boxes = self._sort_boxes_japanese_vertical(boxes)
+        self._save_yolo_bbox_debug(image_bgr, ordered_boxes)
+
+
         segments: list[KanjiSegment] = []
 
         for box in ordered_boxes:
@@ -160,6 +169,106 @@ class SegmentationService:
             )
 
         return segments
+
+    def normalize_single_character(self, image_bgr: ImageMatrix) -> list[KanjiSegment]:
+        logger.warning("ENTROU NO yolo_agent.normalize_single_character")
+
+        if image_bgr is None or image_bgr.size == 0:
+            return []
+
+        original_height, original_width = image_bgr.shape[:2]
+
+        gray = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2GRAY) if len(image_bgr.shape) == 3 else image_bgr
+        gray = gray.astype(np.uint8)
+
+        min_side = min(gray.shape[:2])
+        if min_side < 64:
+            scale = 64 / min_side
+            gray = cv2.resize(
+                gray,
+                None,
+                fx=scale,
+                fy=scale,
+                interpolation=cv2.INTER_CUBIC,
+            )
+
+        # Garante caractere claro em fundo preto
+        # Caso a imagem seja fundo branco com caractere escuro
+        inverted = 255 - gray
+
+        _, mask = cv2.threshold(
+            gray,
+            0,
+            255,
+            cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU,
+        )
+
+        mask = self._remove_small_components(mask)
+
+        if not np.any(mask > 0):
+            logger.warning("normalize_single_character: máscara vazia")
+            return []
+
+        ink_gray = cv2.bitwise_and(inverted, inverted, mask=mask)
+
+        ink_gray, mask = self._trim_gray_to_mask(ink_gray, mask)
+
+        normalized_crop = self._normalize_to_28x28(ink_gray)
+
+        if not self._is_valid_crop(normalized_crop):
+            logger.warning(
+                "normalize_single_character: crop inválido shape=%s dtype=%s max=%s",
+                getattr(normalized_crop, "shape", None),
+                getattr(normalized_crop, "dtype", None),
+                int(normalized_crop.max()) if normalized_crop.size else None,
+            )
+            return []
+
+        return [
+            KanjiSegment(
+                order=1,
+                crop=normalized_crop,
+                bounding_box=BoundingBox(
+                    x=0,
+                    y=0,
+                    w=original_width,
+                    h=original_height,
+                ),
+            )
+        ]
+
+    def _save_yolo_bbox_debug(self, image_bgr, boxes):
+        debug_dir = Path(__file__).resolve().parents[2] / "debug_segmentation"
+        debug_dir.mkdir(parents=True, exist_ok=True)
+
+        debug_image = image_bgr.copy()
+
+        logger.warning("DEBUG YOLO: salvando %d boxes em %s", len(boxes), debug_dir)
+
+        for index, box in enumerate(boxes, start=1):
+            cv2.rectangle(
+                debug_image,
+                (box.x1, box.y1),
+                (box.x2, box.y2),
+                (0, 0, 255),
+                2,
+            )
+
+            cv2.putText(
+                debug_image,
+                f"{index} {box.confidence:.2f}",
+                (box.x1, max(15, box.y1 - 5)),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.45,
+                (0, 0, 255),
+                1,
+                cv2.LINE_AA,
+            )
+
+        output_path = debug_dir / "debug_yolo_boxes.png"
+        ok = cv2.imwrite(str(output_path), debug_image)
+
+        logger.warning("DEBUG YOLO: imwrite=%s path=%s", ok, output_path)
 
     def _extract_boxes(
         self,
