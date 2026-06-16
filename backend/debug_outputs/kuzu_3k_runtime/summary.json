@@ -1,0 +1,6749 @@
+{
+  "image_path": "C:\\Users\\rafae\\OneDrive\\Imagens\\kuzu_3k.jpeg",
+  "output_dir": "backend\\debug_outputs\\kuzu_3k_runtime",
+  "image_shape": [
+    1066,
+    1600,
+    3
+  ],
+  "confidence_threshold": 0.5,
+  "raw_yolo_boxes": 249,
+  "ordered_yolo_boxes": 249,
+  "pipeline_segments": 240,
+  "reconstructed_valid_segments": 249,
+  "classification_results": 249,
+  "classifier_error": null,
+  "iou_pairs_over_0_10": [
+    {
+      "a": 232,
+      "b": 233,
+      "iou": 0.14386459802538787
+    }
+  ],
+  "iou_pairs_over_0_50": [],
+  "rows": [
+    {
+      "order": 1,
+      "x": 1309,
+      "y": 182,
+      "w": 35,
+      "h": 46,
+      "yolo_confidence": 0.9216622114181519,
+      "crop_original_shape": [
+        50,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 63.017857142857146,
+      "classifier_class": "?",
+      "classifier_confidence": 0.44104647636413574,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 2,
+      "x": 1314,
+      "y": 233,
+      "w": 24,
+      "h": 43,
+      "yolo_confidence": 0.8956407308578491,
+      "crop_original_shape": [
+        47,
+        28,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 45.60204081632653,
+      "classifier_class": "な",
+      "classifier_confidence": 0.9224211573600769,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 3,
+      "x": 1311,
+      "y": 284,
+      "w": 38,
+      "h": 41,
+      "yolo_confidence": 0.8850350975990295,
+      "crop_original_shape": [
+        45,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 86.12882653061224,
+      "classifier_class": "?",
+      "classifier_confidence": 0.40819138288497925,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 4,
+      "x": 1309,
+      "y": 331,
+      "w": 35,
+      "h": 85,
+      "yolo_confidence": 0.8698298931121826,
+      "crop_original_shape": [
+        89,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 36.48086734693877,
+      "classifier_class": "?",
+      "classifier_confidence": 0.23119677603244781,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 5,
+      "x": 1315,
+      "y": 427,
+      "w": 32,
+      "h": 37,
+      "yolo_confidence": 0.9237990379333496,
+      "crop_original_shape": [
+        41,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 86.33928571428571,
+      "classifier_class": "?",
+      "classifier_confidence": 0.26386401057243347,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 6,
+      "x": 1318,
+      "y": 472,
+      "w": 23,
+      "h": 35,
+      "yolo_confidence": 0.76835697889328,
+      "crop_original_shape": [
+        39,
+        27,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 54.37755102040816,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.9949278831481934,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 7,
+      "x": 1324,
+      "y": 517,
+      "w": 25,
+      "h": 46,
+      "yolo_confidence": 0.8974980115890503,
+      "crop_original_shape": [
+        50,
+        29,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 61.817602040816325,
+      "classifier_class": "?",
+      "classifier_confidence": 0.38192373514175415,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 8,
+      "x": 1318,
+      "y": 563,
+      "w": 24,
+      "h": 22,
+      "yolo_confidence": 0.6861354112625122,
+      "crop_original_shape": [
+        26,
+        28,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 60.858418367346935,
+      "classifier_class": "て",
+      "classifier_confidence": 0.874172568321228,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 9,
+      "x": 1323,
+      "y": 616,
+      "w": 20,
+      "h": 38,
+      "yolo_confidence": 0.7636557817459106,
+      "crop_original_shape": [
+        42,
+        24,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.91581632653061,
+      "classifier_class": "り",
+      "classifier_confidence": 0.9685064554214478,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 10,
+      "x": 1325,
+      "y": 661,
+      "w": 14,
+      "h": 30,
+      "yolo_confidence": 0.7525128126144409,
+      "crop_original_shape": [
+        34,
+        18,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 44.036989795918366,
+      "classifier_class": "よ",
+      "classifier_confidence": 0.994383692741394,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 11,
+      "x": 1324,
+      "y": 698,
+      "w": 23,
+      "h": 53,
+      "yolo_confidence": 0.8069263696670532,
+      "crop_original_shape": [
+        57,
+        27,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 34.275510204081634,
+      "classifier_class": "た",
+      "classifier_confidence": 0.9997028708457947,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 12,
+      "x": 1324,
+      "y": 757,
+      "w": 21,
+      "h": 46,
+      "yolo_confidence": 0.8823484778404236,
+      "crop_original_shape": [
+        50,
+        25,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 45.10204081632653,
+      "classifier_class": "き",
+      "classifier_confidence": 0.9962279796600342,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 13,
+      "x": 1310,
+      "y": 810,
+      "w": 44,
+      "h": 30,
+      "yolo_confidence": 0.8750749230384827,
+      "crop_original_shape": [
+        34,
+        48,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 64.45918367346938,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9484889507293701,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 14,
+      "x": 1317,
+      "y": 856,
+      "w": 29,
+      "h": 37,
+      "yolo_confidence": 0.8206381797790527,
+      "crop_original_shape": [
+        41,
+        33,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 77.65688775510205,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.5036062002182007,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 15,
+      "x": 1249,
+      "y": 181,
+      "w": 40,
+      "h": 49,
+      "yolo_confidence": 0.8474117517471313,
+      "crop_original_shape": [
+        53,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 79.31505102040816,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2182600349187851,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 16,
+      "x": 1267,
+      "y": 238,
+      "w": 13,
+      "h": 40,
+      "yolo_confidence": 0.8464388251304626,
+      "crop_original_shape": [
+        44,
+        17,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 33.140306122448976,
+      "classifier_class": "と",
+      "classifier_confidence": 0.9976638555526733,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 17,
+      "x": 1250,
+      "y": 280,
+      "w": 37,
+      "h": 44,
+      "yolo_confidence": 0.9241457581520081,
+      "crop_original_shape": [
+        48,
+        41,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 79.8686224489796,
+      "classifier_class": "あ",
+      "classifier_confidence": 0.6273492574691772,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 18,
+      "x": 1254,
+      "y": 327,
+      "w": 28,
+      "h": 46,
+      "yolo_confidence": 0.8656411170959473,
+      "crop_original_shape": [
+        50,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 54.37244897959184,
+      "classifier_class": "?",
+      "classifier_confidence": 0.49681028723716736,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 19,
+      "x": 1263,
+      "y": 382,
+      "w": 16,
+      "h": 37,
+      "yolo_confidence": 0.7489007711410522,
+      "crop_original_shape": [
+        41,
+        20,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 35.05102040816327,
+      "classifier_class": "る",
+      "classifier_confidence": 0.9981198906898499,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 20,
+      "x": 1252,
+      "y": 422,
+      "w": 34,
+      "h": 43,
+      "yolo_confidence": 0.9200004935264587,
+      "crop_original_shape": [
+        47,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 65.67219387755102,
+      "classifier_class": "さ",
+      "classifier_confidence": 0.6531475186347961,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 21,
+      "x": 1257,
+      "y": 469,
+      "w": 27,
+      "h": 43,
+      "yolo_confidence": 0.8888156414031982,
+      "crop_original_shape": [
+        47,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 50.94897959183673,
+      "classifier_class": "け",
+      "classifier_confidence": 0.5210618376731873,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 22,
+      "x": 1258,
+      "y": 518,
+      "w": 26,
+      "h": 44,
+      "yolo_confidence": 0.9005406498908997,
+      "crop_original_shape": [
+        48,
+        30,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 43.859693877551024,
+      "classifier_class": "も",
+      "classifier_confidence": 0.6130205988883972,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 23,
+      "x": 1254,
+      "y": 574,
+      "w": 40,
+      "h": 25,
+      "yolo_confidence": 0.9001592397689819,
+      "crop_original_shape": [
+        29,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 63.80484693877551,
+      "classifier_class": "?",
+      "classifier_confidence": 0.16006043553352356,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 24,
+      "x": 1257,
+      "y": 709,
+      "w": 23,
+      "h": 44,
+      "yolo_confidence": 0.7300664186477661,
+      "crop_original_shape": [
+        48,
+        27,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.81122448979592,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.9995391368865967,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 25,
+      "x": 1262,
+      "y": 803,
+      "w": 19,
+      "h": 34,
+      "yolo_confidence": 0.6882718205451965,
+      "crop_original_shape": [
+        38,
+        23,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 53.26147959183673,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.9500864744186401,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 26,
+      "x": 1188,
+      "y": 187,
+      "w": 42,
+      "h": 37,
+      "yolo_confidence": 0.9363088011741638,
+      "crop_original_shape": [
+        41,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 54.78061224489796,
+      "classifier_class": "ふ",
+      "classifier_confidence": 0.8212038278579712,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 27,
+      "x": 1204,
+      "y": 233,
+      "w": 10,
+      "h": 34,
+      "yolo_confidence": 0.7254714965820312,
+      "crop_original_shape": [
+        38,
+        14,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 29.323979591836736,
+      "classifier_class": "か",
+      "classifier_confidence": 0.6146426200866699,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0056179775280898875,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 28,
+      "x": 1199,
+      "y": 266,
+      "w": 25,
+      "h": 58,
+      "yolo_confidence": 0.9067102074623108,
+      "crop_original_shape": [
+        62,
+        29,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 39.37372448979592,
+      "classifier_class": "き",
+      "classifier_confidence": 0.994629442691803,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 29,
+      "x": 1192,
+      "y": 329,
+      "w": 32,
+      "h": 44,
+      "yolo_confidence": 0.9023838639259338,
+      "crop_original_shape": [
+        48,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 62.97831632653061,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4204692840576172,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 30,
+      "x": 1193,
+      "y": 377,
+      "w": 41,
+      "h": 37,
+      "yolo_confidence": 0.9309189319610596,
+      "crop_original_shape": [
+        41,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 62.86224489795919,
+      "classifier_class": "?",
+      "classifier_confidence": 0.3533581793308258,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 31,
+      "x": 1202,
+      "y": 424,
+      "w": 21,
+      "h": 49,
+      "yolo_confidence": 0.7822567820549011,
+      "crop_original_shape": [
+        53,
+        25,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 43.35331632653061,
+      "classifier_class": "な",
+      "classifier_confidence": 0.8270485401153564,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 32,
+      "x": 1209,
+      "y": 475,
+      "w": 7,
+      "h": 40,
+      "yolo_confidence": 0.7023947238922119,
+      "crop_original_shape": [
+        44,
+        11,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 26.040816326530614,
+      "classifier_class": "ら",
+      "classifier_confidence": 0.943120002746582,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 33,
+      "x": 1197,
+      "y": 521,
+      "w": 32,
+      "h": 41,
+      "yolo_confidence": 0.9274039268493652,
+      "crop_original_shape": [
+        45,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 67.74107142857143,
+      "classifier_class": "ひ",
+      "classifier_confidence": 0.9905767440795898,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 34,
+      "x": 1194,
+      "y": 567,
+      "w": 41,
+      "h": 42,
+      "yolo_confidence": 0.9374493360519409,
+      "crop_original_shape": [
+        46,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 83.66326530612245,
+      "classifier_class": "?",
+      "classifier_confidence": 0.31608667969703674,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 35,
+      "x": 1196,
+      "y": 617,
+      "w": 31,
+      "h": 39,
+      "yolo_confidence": 0.9144330024719238,
+      "crop_original_shape": [
+        43,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 63.077806122448976,
+      "classifier_class": "す",
+      "classifier_confidence": 0.6526044011116028,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 36,
+      "x": 1197,
+      "y": 662,
+      "w": 30,
+      "h": 43,
+      "yolo_confidence": 0.8844600319862366,
+      "crop_original_shape": [
+        47,
+        34,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 50.00255102040816,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.5767592787742615,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 37,
+      "x": 1196,
+      "y": 710,
+      "w": 34,
+      "h": 44,
+      "yolo_confidence": 0.8887944221496582,
+      "crop_original_shape": [
+        48,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 70.7295918367347,
+      "classifier_class": "?",
+      "classifier_confidence": 0.16519148647785187,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 38,
+      "x": 1200,
+      "y": 766,
+      "w": 28,
+      "h": 21,
+      "yolo_confidence": 0.8768594264984131,
+      "crop_original_shape": [
+        25,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 50.29974489795919,
+      "classifier_class": "は",
+      "classifier_confidence": 0.9950658082962036,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 39,
+      "x": 1192,
+      "y": 805,
+      "w": 41,
+      "h": 46,
+      "yolo_confidence": 0.9110147953033447,
+      "crop_original_shape": [
+        50,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 83.03571428571429,
+      "classifier_class": "?",
+      "classifier_confidence": 0.23972050845623016,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 40,
+      "x": 1198,
+      "y": 855,
+      "w": 25,
+      "h": 45,
+      "yolo_confidence": 0.8572973012924194,
+      "crop_original_shape": [
+        49,
+        29,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 60.19770408163265,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.6791435480117798,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 41,
+      "x": 1135,
+      "y": 182,
+      "w": 32,
+      "h": 46,
+      "yolo_confidence": 0.9345282912254333,
+      "crop_original_shape": [
+        50,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.14668367346939,
+      "classifier_class": "?",
+      "classifier_confidence": 0.48796090483665466,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 42,
+      "x": 1141,
+      "y": 237,
+      "w": 17,
+      "h": 36,
+      "yolo_confidence": 0.9084159135818481,
+      "crop_original_shape": [
+        40,
+        21,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 37.329081632653065,
+      "classifier_class": "は",
+      "classifier_confidence": 0.9889667630195618,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 43,
+      "x": 1131,
+      "y": 282,
+      "w": 38,
+      "h": 40,
+      "yolo_confidence": 0.938403844833374,
+      "crop_original_shape": [
+        44,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 88.98852040816327,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2928675711154938,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 44,
+      "x": 1128,
+      "y": 330,
+      "w": 43,
+      "h": 34,
+      "yolo_confidence": 0.9245704412460327,
+      "crop_original_shape": [
+        38,
+        47,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 54.86352040816327,
+      "classifier_class": "に",
+      "classifier_confidence": 0.994594395160675,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 45,
+      "x": 1140,
+      "y": 374,
+      "w": 22,
+      "h": 38,
+      "yolo_confidence": 0.8863480687141418,
+      "crop_original_shape": [
+        42,
+        26,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 51.84311224489796,
+      "classifier_class": "な",
+      "classifier_confidence": 0.7120477557182312,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 46,
+      "x": 1136,
+      "y": 472,
+      "w": 31,
+      "h": 42,
+      "yolo_confidence": 0.9198412299156189,
+      "crop_original_shape": [
+        46,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.580357142857146,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4168194532394409,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 47,
+      "x": 1140,
+      "y": 522,
+      "w": 24,
+      "h": 39,
+      "yolo_confidence": 0.9237836599349976,
+      "crop_original_shape": [
+        43,
+        28,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 72.59566326530613,
+      "classifier_class": "?",
+      "classifier_confidence": 0.23543721437454224,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 48,
+      "x": 1147,
+      "y": 567,
+      "w": 12,
+      "h": 39,
+      "yolo_confidence": 0.8527863025665283,
+      "crop_original_shape": [
+        43,
+        16,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 32.795918367346935,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9323993921279907,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 49,
+      "x": 1143,
+      "y": 611,
+      "w": 23,
+      "h": 46,
+      "yolo_confidence": 0.8316298723220825,
+      "crop_original_shape": [
+        50,
+        27,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 40.69897959183673,
+      "classifier_class": "も",
+      "classifier_confidence": 0.9994679093360901,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 50,
+      "x": 1137,
+      "y": 668,
+      "w": 32,
+      "h": 35,
+      "yolo_confidence": 0.9021965265274048,
+      "crop_original_shape": [
+        39,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 80.48469387755102,
+      "classifier_class": "お",
+      "classifier_confidence": 0.9836545586585999,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.011320754716981131,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 51,
+      "x": 1140,
+      "y": 702,
+      "w": 21,
+      "h": 36,
+      "yolo_confidence": 0.6293586492538452,
+      "crop_original_shape": [
+        40,
+        25,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 46.99107142857143,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4081480801105499,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 52,
+      "x": 1134,
+      "y": 764,
+      "w": 44,
+      "h": 31,
+      "yolo_confidence": 0.9301275014877319,
+      "crop_original_shape": [
+        35,
+        48,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 60.69897959183673,
+      "classifier_class": "に",
+      "classifier_confidence": 0.8749215006828308,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 53,
+      "x": 1132,
+      "y": 809,
+      "w": 40,
+      "h": 35,
+      "yolo_confidence": 0.9123899340629578,
+      "crop_original_shape": [
+        39,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.974489795918366,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9715631008148193,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 54,
+      "x": 1147,
+      "y": 852,
+      "w": 16,
+      "h": 45,
+      "yolo_confidence": 0.8558637499809265,
+      "crop_original_shape": [
+        49,
+        20,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 39.764030612244895,
+      "classifier_class": "も",
+      "classifier_confidence": 0.9301115274429321,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 55,
+      "x": 1071,
+      "y": 190,
+      "w": 35,
+      "h": 34,
+      "yolo_confidence": 0.9226253032684326,
+      "crop_original_shape": [
+        38,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 91.06377551020408,
+      "classifier_class": "お",
+      "classifier_confidence": 0.9779376983642578,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 56,
+      "x": 1070,
+      "y": 232,
+      "w": 36,
+      "h": 47,
+      "yolo_confidence": 0.9409034848213196,
+      "crop_original_shape": [
+        51,
+        40,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 65.51275510204081,
+      "classifier_class": "れ",
+      "classifier_confidence": 0.6806219816207886,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 57,
+      "x": 1072,
+      "y": 286,
+      "w": 38,
+      "h": 32,
+      "yolo_confidence": 0.8072476983070374,
+      "crop_original_shape": [
+        36,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 52.19515306122449,
+      "classifier_class": "い",
+      "classifier_confidence": 0.8035643696784973,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 58,
+      "x": 1082,
+      "y": 324,
+      "w": 25,
+      "h": 49,
+      "yolo_confidence": 0.8282884955406189,
+      "crop_original_shape": [
+        53,
+        29,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 35.588010204081634,
+      "classifier_class": "た",
+      "classifier_confidence": 0.9994993209838867,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 59,
+      "x": 1081,
+      "y": 375,
+      "w": 20,
+      "h": 19,
+      "yolo_confidence": 0.7381570339202881,
+      "crop_original_shape": [
+        23,
+        24,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.55994897959184,
+      "classifier_class": "は",
+      "classifier_confidence": 0.7577655911445618,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.00823045267489712,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 60,
+      "x": 1088,
+      "y": 393,
+      "w": 8,
+      "h": 75,
+      "yolo_confidence": 0.5773378610610962,
+      "crop_original_shape": [
+        79,
+        12,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 17.221938775510203,
+      "classifier_class": "し",
+      "classifier_confidence": 0.999695897102356,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 61,
+      "x": 1084,
+      "y": 473,
+      "w": 22,
+      "h": 40,
+      "yolo_confidence": 0.9130473732948303,
+      "crop_original_shape": [
+        44,
+        26,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.97576530612245,
+      "classifier_class": "も",
+      "classifier_confidence": 0.9250672459602356,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 62,
+      "x": 1076,
+      "y": 522,
+      "w": 35,
+      "h": 39,
+      "yolo_confidence": 0.9229957461357117,
+      "crop_original_shape": [
+        43,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 89.28443877551021,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4743908643722534,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 63,
+      "x": 1070,
+      "y": 569,
+      "w": 41,
+      "h": 37,
+      "yolo_confidence": 0.911331295967102,
+      "crop_original_shape": [
+        41,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.952806122448976,
+      "classifier_class": "ふ",
+      "classifier_confidence": 0.9993845224380493,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 64,
+      "x": 1075,
+      "y": 618,
+      "w": 34,
+      "h": 39,
+      "yolo_confidence": 0.9287065863609314,
+      "crop_original_shape": [
+        43,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 84.66581632653062,
+      "classifier_class": "?",
+      "classifier_confidence": 0.19046330451965332,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 65,
+      "x": 1079,
+      "y": 664,
+      "w": 35,
+      "h": 44,
+      "yolo_confidence": 0.9041056036949158,
+      "crop_original_shape": [
+        48,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 48.08290816326531,
+      "classifier_class": "?",
+      "classifier_confidence": 0.21410317718982697,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 66,
+      "x": 1075,
+      "y": 710,
+      "w": 34,
+      "h": 46,
+      "yolo_confidence": 0.9192801713943481,
+      "crop_original_shape": [
+        50,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 50.89540816326531,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.5454864501953125,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 67,
+      "x": 1080,
+      "y": 759,
+      "w": 29,
+      "h": 38,
+      "yolo_confidence": 0.905840277671814,
+      "crop_original_shape": [
+        42,
+        33,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 77.10969387755102,
+      "classifier_class": "?",
+      "classifier_confidence": 0.3887024223804474,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 68,
+      "x": 1084,
+      "y": 807,
+      "w": 21,
+      "h": 90,
+      "yolo_confidence": 0.8792194128036499,
+      "crop_original_shape": [
+        94,
+        25,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 21.586734693877553,
+      "classifier_class": "く",
+      "classifier_confidence": 0.9089829325675964,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 69,
+      "x": 1019,
+      "y": 191,
+      "w": 28,
+      "h": 38,
+      "yolo_confidence": 0.9221797585487366,
+      "crop_original_shape": [
+        42,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 64.05484693877551,
+      "classifier_class": "?",
+      "classifier_confidence": 0.47247251868247986,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 70,
+      "x": 1021,
+      "y": 237,
+      "w": 25,
+      "h": 42,
+      "yolo_confidence": 0.8819018602371216,
+      "crop_original_shape": [
+        46,
+        29,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 40.755102040816325,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4230959713459015,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 71,
+      "x": 1024,
+      "y": 283,
+      "w": 15,
+      "h": 36,
+      "yolo_confidence": 0.8136658668518066,
+      "crop_original_shape": [
+        40,
+        19,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 35.31505102040816,
+      "classifier_class": "た",
+      "classifier_confidence": 0.9954602122306824,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 72,
+      "x": 1014,
+      "y": 326,
+      "w": 35,
+      "h": 39,
+      "yolo_confidence": 0.8806442618370056,
+      "crop_original_shape": [
+        43,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 69.39030612244898,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4763570725917816,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 73,
+      "x": 1013,
+      "y": 379,
+      "w": 38,
+      "h": 39,
+      "yolo_confidence": 0.9240044951438904,
+      "crop_original_shape": [
+        43,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 104.8813775510204,
+      "classifier_class": "?",
+      "classifier_confidence": 0.21616095304489136,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 74,
+      "x": 1018,
+      "y": 425,
+      "w": 34,
+      "h": 43,
+      "yolo_confidence": 0.9188151955604553,
+      "crop_original_shape": [
+        47,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 56.294642857142854,
+      "classifier_class": "そ",
+      "classifier_confidence": 0.6435915231704712,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 75,
+      "x": 1021,
+      "y": 473,
+      "w": 21,
+      "h": 23,
+      "yolo_confidence": 0.8346192836761475,
+      "crop_original_shape": [
+        27,
+        25,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 74.00765306122449,
+      "classifier_class": "と",
+      "classifier_confidence": 0.8620606660842896,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.01643192488262911,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 76,
+      "x": 1019,
+      "y": 495,
+      "w": 34,
+      "h": 24,
+      "yolo_confidence": 0.8757898807525635,
+      "crop_original_shape": [
+        28,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 56.400510204081634,
+      "classifier_class": "ん",
+      "classifier_confidence": 0.9186419248580933,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 77,
+      "x": 1017,
+      "y": 522,
+      "w": 31,
+      "h": 40,
+      "yolo_confidence": 0.9306433796882629,
+      "crop_original_shape": [
+        44,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 65.44515306122449,
+      "classifier_class": "?",
+      "classifier_confidence": 0.24722769856452942,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 78,
+      "x": 1018,
+      "y": 568,
+      "w": 27,
+      "h": 48,
+      "yolo_confidence": 0.8492318987846375,
+      "crop_original_shape": [
+        52,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 53.191326530612244,
+      "classifier_class": "も",
+      "classifier_confidence": 0.977530300617218,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 79,
+      "x": 1030,
+      "y": 621,
+      "w": 14,
+      "h": 36,
+      "yolo_confidence": 0.5074724555015564,
+      "crop_original_shape": [
+        40,
+        18,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 36.764030612244895,
+      "classifier_class": "る",
+      "classifier_confidence": 0.9997186064720154,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 80,
+      "x": 1013,
+      "y": 667,
+      "w": 38,
+      "h": 35,
+      "yolo_confidence": 0.9396222233772278,
+      "crop_original_shape": [
+        39,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 59.378826530612244,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9935345649719238,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 81,
+      "x": 1029,
+      "y": 712,
+      "w": 12,
+      "h": 33,
+      "yolo_confidence": 0.7508979439735413,
+      "crop_original_shape": [
+        37,
+        16,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 35.26147959183673,
+      "classifier_class": "よ",
+      "classifier_confidence": 0.9999439716339111,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 82,
+      "x": 1026,
+      "y": 749,
+      "w": 16,
+      "h": 41,
+      "yolo_confidence": 0.6518929600715637,
+      "crop_original_shape": [
+        45,
+        20,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 42.794642857142854,
+      "classifier_class": "る",
+      "classifier_confidence": 0.6892099380493164,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 83,
+      "x": 1013,
+      "y": 862,
+      "w": 44,
+      "h": 25,
+      "yolo_confidence": 0.7835628986358643,
+      "crop_original_shape": [
+        29,
+        48,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 58.38647959183673,
+      "classifier_class": "や",
+      "classifier_confidence": 0.6730086803436279,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 84,
+      "x": 958,
+      "y": 182,
+      "w": 21,
+      "h": 20,
+      "yolo_confidence": 0.7207731008529663,
+      "crop_original_shape": [
+        24,
+        25,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 66.6670918367347,
+      "classifier_class": "も",
+      "classifier_confidence": 0.8468771576881409,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 85,
+      "x": 964,
+      "y": 205,
+      "w": 10,
+      "h": 31,
+      "yolo_confidence": 0.7232442498207092,
+      "crop_original_shape": [
+        35,
+        14,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 31.761479591836736,
+      "classifier_class": "ら",
+      "classifier_confidence": 0.9866069555282593,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 86,
+      "x": 951,
+      "y": 237,
+      "w": 34,
+      "h": 42,
+      "yolo_confidence": 0.9046177268028259,
+      "crop_original_shape": [
+        46,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 75.43239795918367,
+      "classifier_class": "れ",
+      "classifier_confidence": 0.8072684407234192,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 87,
+      "x": 955,
+      "y": 293,
+      "w": 30,
+      "h": 16,
+      "yolo_confidence": 0.9085131287574768,
+      "crop_original_shape": [
+        20,
+        34,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 33.202806122448976,
+      "classifier_class": "は",
+      "classifier_confidence": 0.9982781410217285,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 88,
+      "x": 955,
+      "y": 329,
+      "w": 36,
+      "h": 40,
+      "yolo_confidence": 0.9299096465110779,
+      "crop_original_shape": [
+        44,
+        40,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 79.71301020408163,
+      "classifier_class": "?",
+      "classifier_confidence": 0.283315509557724,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 89,
+      "x": 960,
+      "y": 377,
+      "w": 26,
+      "h": 40,
+      "yolo_confidence": 0.9211016297340393,
+      "crop_original_shape": [
+        44,
+        30,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 58.78954081632653,
+      "classifier_class": "さ",
+      "classifier_confidence": 0.5546773076057434,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 90,
+      "x": 954,
+      "y": 429,
+      "w": 33,
+      "h": 34,
+      "yolo_confidence": 0.9160367250442505,
+      "crop_original_shape": [
+        38,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 84.2079081632653,
+      "classifier_class": "?",
+      "classifier_confidence": 0.28546154499053955,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 91,
+      "x": 968,
+      "y": 477,
+      "w": 17,
+      "h": 33,
+      "yolo_confidence": 0.8702730536460876,
+      "crop_original_shape": [
+        37,
+        21,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 44.183673469387756,
+      "classifier_class": "る",
+      "classifier_confidence": 0.9999973773956299,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 92,
+      "x": 955,
+      "y": 520,
+      "w": 34,
+      "h": 44,
+      "yolo_confidence": 0.9262712597846985,
+      "crop_original_shape": [
+        48,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 68.01020408163265,
+      "classifier_class": "さ",
+      "classifier_confidence": 0.679434061050415,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 93,
+      "x": 959,
+      "y": 580,
+      "w": 27,
+      "h": 18,
+      "yolo_confidence": 0.8624382019042969,
+      "crop_original_shape": [
+        22,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 48.183673469387756,
+      "classifier_class": "は",
+      "classifier_confidence": 0.999967098236084,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 94,
+      "x": 955,
+      "y": 614,
+      "w": 36,
+      "h": 20,
+      "yolo_confidence": 0.5019270777702332,
+      "crop_original_shape": [
+        24,
+        40,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.06505102040816,
+      "classifier_class": "?",
+      "classifier_confidence": 0.30739447474479675,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 95,
+      "x": 962,
+      "y": 669,
+      "w": 20,
+      "h": 33,
+      "yolo_confidence": 0.9247462153434753,
+      "crop_original_shape": [
+        37,
+        24,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.77168367346939,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.9997785687446594,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 96,
+      "x": 962,
+      "y": 711,
+      "w": 24,
+      "h": 45,
+      "yolo_confidence": 0.9098270535469055,
+      "crop_original_shape": [
+        49,
+        28,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.86734693877551,
+      "classifier_class": "れ",
+      "classifier_confidence": 0.988695502281189,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 97,
+      "x": 960,
+      "y": 764,
+      "w": 31,
+      "h": 30,
+      "yolo_confidence": 0.9413442015647888,
+      "crop_original_shape": [
+        34,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 86.44642857142857,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9600372910499573,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 98,
+      "x": 962,
+      "y": 809,
+      "w": 24,
+      "h": 84,
+      "yolo_confidence": 0.9011440873146057,
+      "crop_original_shape": [
+        88,
+        28,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 30.679846938775512,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4439254105091095,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 99,
+      "x": 906,
+      "y": 184,
+      "w": 11,
+      "h": 38,
+      "yolo_confidence": 0.7854876518249512,
+      "crop_original_shape": [
+        42,
+        15,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 33.598214285714285,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9979506134986877,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 100,
+      "x": 895,
+      "y": 228,
+      "w": 31,
+      "h": 49,
+      "yolo_confidence": 0.8900098204612732,
+      "crop_original_shape": [
+        53,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 41.64795918367347,
+      "classifier_class": "?",
+      "classifier_confidence": 0.259206622838974,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 101,
+      "x": 894,
+      "y": 279,
+      "w": 37,
+      "h": 44,
+      "yolo_confidence": 0.9325566291809082,
+      "crop_original_shape": [
+        48,
+        41,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 87.96556122448979,
+      "classifier_class": "や",
+      "classifier_confidence": 0.8123644590377808,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 102,
+      "x": 900,
+      "y": 328,
+      "w": 26,
+      "h": 43,
+      "yolo_confidence": 0.9187412261962891,
+      "crop_original_shape": [
+        47,
+        30,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.441326530612244,
+      "classifier_class": "も",
+      "classifier_confidence": 0.748681902885437,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 103,
+      "x": 901,
+      "y": 413,
+      "w": 23,
+      "h": 55,
+      "yolo_confidence": 0.9166767597198486,
+      "crop_original_shape": [
+        59,
+        27,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.713010204081634,
+      "classifier_class": "き",
+      "classifier_confidence": 0.9994587302207947,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 104,
+      "x": 899,
+      "y": 472,
+      "w": 28,
+      "h": 41,
+      "yolo_confidence": 0.9155224561691284,
+      "crop_original_shape": [
+        45,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 58.75892857142857,
+      "classifier_class": "れ",
+      "classifier_confidence": 0.5183255076408386,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 105,
+      "x": 894,
+      "y": 569,
+      "w": 37,
+      "h": 41,
+      "yolo_confidence": 0.9104640483856201,
+      "crop_original_shape": [
+        45,
+        41,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 81.04974489795919,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2054576426744461,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 106,
+      "x": 908,
+      "y": 618,
+      "w": 13,
+      "h": 36,
+      "yolo_confidence": 0.9017568230628967,
+      "crop_original_shape": [
+        40,
+        17,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 33.19005102040816,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9977176189422607,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 107,
+      "x": 902,
+      "y": 662,
+      "w": 21,
+      "h": 27,
+      "yolo_confidence": 0.7695896029472351,
+      "crop_original_shape": [
+        31,
+        25,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 60.4094387755102,
+      "classifier_class": "か",
+      "classifier_confidence": 0.9320230484008789,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 108,
+      "x": 907,
+      "y": 721,
+      "w": 15,
+      "h": 32,
+      "yolo_confidence": 0.8265402317047119,
+      "crop_original_shape": [
+        36,
+        19,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 40.23979591836735,
+      "classifier_class": "る",
+      "classifier_confidence": 0.9997894167900085,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 109,
+      "x": 894,
+      "y": 759,
+      "w": 38,
+      "h": 37,
+      "yolo_confidence": 0.9273203015327454,
+      "crop_original_shape": [
+        41,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 74.50127551020408,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4757268726825714,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 110,
+      "x": 890,
+      "y": 807,
+      "w": 46,
+      "h": 41,
+      "yolo_confidence": 0.9146803021430969,
+      "crop_original_shape": [
+        45,
+        50,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 70.17091836734694,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2406584620475769,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 111,
+      "x": 907,
+      "y": 857,
+      "w": 15,
+      "h": 40,
+      "yolo_confidence": 0.7588419914245605,
+      "crop_original_shape": [
+        44,
+        19,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 36.786989795918366,
+      "classifier_class": "か",
+      "classifier_confidence": 0.9963990449905396,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 112,
+      "x": 834,
+      "y": 182,
+      "w": 33,
+      "h": 48,
+      "yolo_confidence": 0.9295554757118225,
+      "crop_original_shape": [
+        52,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 59.46811224489796,
+      "classifier_class": "?",
+      "classifier_confidence": 0.17460912466049194,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 113,
+      "x": 834,
+      "y": 234,
+      "w": 35,
+      "h": 42,
+      "yolo_confidence": 0.9265398383140564,
+      "crop_original_shape": [
+        46,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 76.77551020408163,
+      "classifier_class": "?",
+      "classifier_confidence": 0.25362837314605713,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 114,
+      "x": 834,
+      "y": 283,
+      "w": 28,
+      "h": 41,
+      "yolo_confidence": 0.8216553926467896,
+      "crop_original_shape": [
+        45,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 40.21811224489796,
+      "classifier_class": "て",
+      "classifier_confidence": 0.6239588856697083,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 115,
+      "x": 830,
+      "y": 327,
+      "w": 42,
+      "h": 40,
+      "yolo_confidence": 0.9327502250671387,
+      "crop_original_shape": [
+        44,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 56.12372448979592,
+      "classifier_class": "ふ",
+      "classifier_confidence": 0.9999551773071289,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 116,
+      "x": 836,
+      "y": 381,
+      "w": 29,
+      "h": 33,
+      "yolo_confidence": 0.9161838889122009,
+      "crop_original_shape": [
+        37,
+        33,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 61.88137755102041,
+      "classifier_class": "を",
+      "classifier_confidence": 0.9506535530090332,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 117,
+      "x": 837,
+      "y": 429,
+      "w": 32,
+      "h": 33,
+      "yolo_confidence": 0.91184002161026,
+      "crop_original_shape": [
+        37,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 82.54719387755102,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9975461363792419,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 118,
+      "x": 832,
+      "y": 472,
+      "w": 38,
+      "h": 45,
+      "yolo_confidence": 0.9299840927124023,
+      "crop_original_shape": [
+        49,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 76.9859693877551,
+      "classifier_class": "を",
+      "classifier_confidence": 0.5507910847663879,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 119,
+      "x": 838,
+      "y": 524,
+      "w": 27,
+      "h": 34,
+      "yolo_confidence": 0.816031813621521,
+      "crop_original_shape": [
+        38,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 56.81887755102041,
+      "classifier_class": "し",
+      "classifier_confidence": 0.9949040412902832,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 120,
+      "x": 846,
+      "y": 561,
+      "w": 11,
+      "h": 50,
+      "yolo_confidence": 0.5837377309799194,
+      "crop_original_shape": [
+        54,
+        15,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 22.9859693877551,
+      "classifier_class": "ら",
+      "classifier_confidence": 0.9944895505905151,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 121,
+      "x": 839,
+      "y": 613,
+      "w": 33,
+      "h": 49,
+      "yolo_confidence": 0.8578010201454163,
+      "crop_original_shape": [
+        53,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 55.94005102040816,
+      "classifier_class": "ひ",
+      "classifier_confidence": 0.8800294399261475,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 122,
+      "x": 840,
+      "y": 721,
+      "w": 27,
+      "h": 36,
+      "yolo_confidence": 0.8940120339393616,
+      "crop_original_shape": [
+        40,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 41.54974489795919,
+      "classifier_class": "て",
+      "classifier_confidence": 0.6074996590614319,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 123,
+      "x": 833,
+      "y": 764,
+      "w": 40,
+      "h": 35,
+      "yolo_confidence": 0.9303145408630371,
+      "crop_original_shape": [
+        39,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 60.875,
+      "classifier_class": "い",
+      "classifier_confidence": 0.9952502250671387,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 124,
+      "x": 849,
+      "y": 812,
+      "w": 13,
+      "h": 39,
+      "yolo_confidence": 0.7822026610374451,
+      "crop_original_shape": [
+        43,
+        17,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 34.253826530612244,
+      "classifier_class": "と",
+      "classifier_confidence": 0.9944707155227661,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 125,
+      "x": 837,
+      "y": 856,
+      "w": 37,
+      "h": 43,
+      "yolo_confidence": 0.9094999432563782,
+      "crop_original_shape": [
+        47,
+        41,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 70.55867346938776,
+      "classifier_class": "け",
+      "classifier_confidence": 0.7890612483024597,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 126,
+      "x": 744,
+      "y": 179,
+      "w": 26,
+      "h": 51,
+      "yolo_confidence": 0.916750967502594,
+      "crop_original_shape": [
+        55,
+        30,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.66326530612245,
+      "classifier_class": "も",
+      "classifier_confidence": 0.7754474878311157,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 127,
+      "x": 744,
+      "y": 233,
+      "w": 31,
+      "h": 41,
+      "yolo_confidence": 0.8694536685943604,
+      "crop_original_shape": [
+        45,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 52.90433673469388,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2843305468559265,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 128,
+      "x": 741,
+      "y": 279,
+      "w": 28,
+      "h": 40,
+      "yolo_confidence": 0.9328146576881409,
+      "crop_original_shape": [
+        44,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 55.71683673469388,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2410384863615036,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 129,
+      "x": 734,
+      "y": 325,
+      "w": 34,
+      "h": 42,
+      "yolo_confidence": 0.9328144192695618,
+      "crop_original_shape": [
+        46,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 74.8265306122449,
+      "classifier_class": "?",
+      "classifier_confidence": 0.33371248841285706,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 130,
+      "x": 743,
+      "y": 372,
+      "w": 15,
+      "h": 45,
+      "yolo_confidence": 0.9147078990936279,
+      "crop_original_shape": [
+        49,
+        19,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 32.35586734693877,
+      "classifier_class": "う",
+      "classifier_confidence": 0.9591732621192932,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 131,
+      "x": 732,
+      "y": 427,
+      "w": 35,
+      "h": 30,
+      "yolo_confidence": 0.9439312219619751,
+      "crop_original_shape": [
+        34,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 72.93367346938776,
+      "classifier_class": "の",
+      "classifier_confidence": 0.9999963045120239,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 132,
+      "x": 728,
+      "y": 467,
+      "w": 42,
+      "h": 41,
+      "yolo_confidence": 0.9395061731338501,
+      "crop_original_shape": [
+        45,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 89.48086734693878,
+      "classifier_class": "?",
+      "classifier_confidence": 0.35147354006767273,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 133,
+      "x": 732,
+      "y": 517,
+      "w": 28,
+      "h": 41,
+      "yolo_confidence": 0.9318169951438904,
+      "crop_original_shape": [
+        45,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 79.34821428571429,
+      "classifier_class": "?",
+      "classifier_confidence": 0.41739213466644287,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 134,
+      "x": 740,
+      "y": 569,
+      "w": 15,
+      "h": 33,
+      "yolo_confidence": 0.9211539030075073,
+      "crop_original_shape": [
+        37,
+        19,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 46.07397959183673,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9483090043067932,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 135,
+      "x": 730,
+      "y": 613,
+      "w": 31,
+      "h": 38,
+      "yolo_confidence": 0.9360901713371277,
+      "crop_original_shape": [
+        42,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 66.77806122448979,
+      "classifier_class": "す",
+      "classifier_confidence": 0.8963863253593445,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 136,
+      "x": 727,
+      "y": 663,
+      "w": 41,
+      "h": 39,
+      "yolo_confidence": 0.9448553323745728,
+      "crop_original_shape": [
+        43,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 68.6313775510204,
+      "classifier_class": "ひ",
+      "classifier_confidence": 0.9929057359695435,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 137,
+      "x": 730,
+      "y": 705,
+      "w": 35,
+      "h": 43,
+      "yolo_confidence": 0.9345117211341858,
+      "crop_original_shape": [
+        47,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 75.19132653061224,
+      "classifier_class": "つ",
+      "classifier_confidence": 0.95730060338974,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 138,
+      "x": 737,
+      "y": 751,
+      "w": 22,
+      "h": 46,
+      "yolo_confidence": 0.8556702136993408,
+      "crop_original_shape": [
+        50,
+        26,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 43.79081632653061,
+      "classifier_class": "き",
+      "classifier_confidence": 0.9987834095954895,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 139,
+      "x": 742,
+      "y": 801,
+      "w": 18,
+      "h": 25,
+      "yolo_confidence": 0.8017748594284058,
+      "crop_original_shape": [
+        29,
+        22,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 64.94515306122449,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2179362177848816,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 140,
+      "x": 674,
+      "y": 181,
+      "w": 43,
+      "h": 38,
+      "yolo_confidence": 0.93841153383255,
+      "crop_original_shape": [
+        42,
+        47,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 56.170918367346935,
+      "classifier_class": "ふ",
+      "classifier_confidence": 0.7381744384765625,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 141,
+      "x": 681,
+      "y": 229,
+      "w": 28,
+      "h": 35,
+      "yolo_confidence": 0.9276159405708313,
+      "crop_original_shape": [
+        39,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 56.10586734693877,
+      "classifier_class": "を",
+      "classifier_confidence": 0.9311893582344055,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 142,
+      "x": 688,
+      "y": 277,
+      "w": 16,
+      "h": 35,
+      "yolo_confidence": 0.8985152244567871,
+      "crop_original_shape": [
+        39,
+        20,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 42.224489795918366,
+      "classifier_class": "る",
+      "classifier_confidence": 0.9999890327453613,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 143,
+      "x": 677,
+      "y": 326,
+      "w": 33,
+      "h": 41,
+      "yolo_confidence": 0.829770565032959,
+      "crop_original_shape": [
+        45,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 72.2359693877551,
+      "classifier_class": "す",
+      "classifier_confidence": 0.587098240852356,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 144,
+      "x": 689,
+      "y": 368,
+      "w": 11,
+      "h": 25,
+      "yolo_confidence": 0.5931344628334045,
+      "crop_original_shape": [
+        29,
+        15,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 43.88265306122449,
+      "classifier_class": "ら",
+      "classifier_confidence": 0.5542512536048889,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 145,
+      "x": 675,
+      "y": 424,
+      "w": 29,
+      "h": 38,
+      "yolo_confidence": 0.722737193107605,
+      "crop_original_shape": [
+        42,
+        33,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.18877551020408,
+      "classifier_class": "も",
+      "classifier_confidence": 0.9999411106109619,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 146,
+      "x": 675,
+      "y": 465,
+      "w": 25,
+      "h": 44,
+      "yolo_confidence": 0.85286545753479,
+      "crop_original_shape": [
+        48,
+        29,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 59.59311224489796,
+      "classifier_class": "?",
+      "classifier_confidence": 0.24221102893352509,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 147,
+      "x": 677,
+      "y": 516,
+      "w": 19,
+      "h": 36,
+      "yolo_confidence": 0.815034806728363,
+      "crop_original_shape": [
+        40,
+        23,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 42.838010204081634,
+      "classifier_class": "け",
+      "classifier_confidence": 0.9757570624351501,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 148,
+      "x": 680,
+      "y": 557,
+      "w": 17,
+      "h": 45,
+      "yolo_confidence": 0.862594723701477,
+      "crop_original_shape": [
+        49,
+        21,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 33.88392857142857,
+      "classifier_class": "も",
+      "classifier_confidence": 0.6954371929168701,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 149,
+      "x": 665,
+      "y": 611,
+      "w": 39,
+      "h": 41,
+      "yolo_confidence": 0.9287126064300537,
+      "crop_original_shape": [
+        45,
+        43,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 55.75892857142857,
+      "classifier_class": "け",
+      "classifier_confidence": 0.6289950013160706,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 150,
+      "x": 666,
+      "y": 657,
+      "w": 40,
+      "h": 45,
+      "yolo_confidence": 0.9301778674125671,
+      "crop_original_shape": [
+        49,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 63.67602040816327,
+      "classifier_class": "?",
+      "classifier_confidence": 0.21895313262939453,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 151,
+      "x": 670,
+      "y": 704,
+      "w": 24,
+      "h": 45,
+      "yolo_confidence": 0.9199328422546387,
+      "crop_original_shape": [
+        49,
+        28,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 52.109693877551024,
+      "classifier_class": "き",
+      "classifier_confidence": 0.8607234954833984,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 152,
+      "x": 679,
+      "y": 757,
+      "w": 12,
+      "h": 35,
+      "yolo_confidence": 0.8527628779411316,
+      "crop_original_shape": [
+        39,
+        16,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 39.33290816326531,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9999192953109741,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 153,
+      "x": 663,
+      "y": 802,
+      "w": 38,
+      "h": 41,
+      "yolo_confidence": 0.9323713779449463,
+      "crop_original_shape": [
+        45,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 89.18877551020408,
+      "classifier_class": "?",
+      "classifier_confidence": 0.3065416216850281,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 154,
+      "x": 662,
+      "y": 849,
+      "w": 39,
+      "h": 45,
+      "yolo_confidence": 0.9285750985145569,
+      "crop_original_shape": [
+        49,
+        43,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 73.30102040816327,
+      "classifier_class": "?",
+      "classifier_confidence": 0.33057382702827454,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 155,
+      "x": 620,
+      "y": 176,
+      "w": 35,
+      "h": 46,
+      "yolo_confidence": 0.9257365465164185,
+      "crop_original_shape": [
+        50,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 66.62117346938776,
+      "classifier_class": "け",
+      "classifier_confidence": 0.6129592061042786,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 156,
+      "x": 623,
+      "y": 224,
+      "w": 27,
+      "h": 43,
+      "yolo_confidence": 0.9389609098434448,
+      "crop_original_shape": [
+        47,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 49.77423469387755,
+      "classifier_class": "か",
+      "classifier_confidence": 0.5308017134666443,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 157,
+      "x": 620,
+      "y": 280,
+      "w": 35,
+      "h": 45,
+      "yolo_confidence": 0.7851384878158569,
+      "crop_original_shape": [
+        49,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 59.139030612244895,
+      "classifier_class": "も",
+      "classifier_confidence": 0.6681227087974548,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 158,
+      "x": 616,
+      "y": 367,
+      "w": 35,
+      "h": 26,
+      "yolo_confidence": 0.8322461247444153,
+      "crop_original_shape": [
+        30,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 61.86224489795919,
+      "classifier_class": "い",
+      "classifier_confidence": 0.9870915412902832,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 159,
+      "x": 607,
+      "y": 399,
+      "w": 45,
+      "h": 60,
+      "yolo_confidence": 0.5980422496795654,
+      "crop_original_shape": [
+        64,
+        49,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 41.19515306122449,
+      "classifier_class": "ふ",
+      "classifier_confidence": 0.9997583031654358,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 160,
+      "x": 607,
+      "y": 465,
+      "w": 44,
+      "h": 44,
+      "yolo_confidence": 0.9373274445533752,
+      "crop_original_shape": [
+        48,
+        48,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 48.85459183673469,
+      "classifier_class": "く",
+      "classifier_confidence": 0.501678466796875,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 161,
+      "x": 609,
+      "y": 511,
+      "w": 40,
+      "h": 36,
+      "yolo_confidence": 0.9197877645492554,
+      "crop_original_shape": [
+        40,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 73.77295918367346,
+      "classifier_class": "か",
+      "classifier_confidence": 0.6590113639831543,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 162,
+      "x": 622,
+      "y": 549,
+      "w": 11,
+      "h": 52,
+      "yolo_confidence": 0.8487184047698975,
+      "crop_original_shape": [
+        56,
+        15,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 22.950255102040817,
+      "classifier_class": "?",
+      "classifier_confidence": 0.42064473032951355,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 163,
+      "x": 606,
+      "y": 705,
+      "w": 38,
+      "h": 45,
+      "yolo_confidence": 0.9260281920433044,
+      "crop_original_shape": [
+        49,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 87.62244897959184,
+      "classifier_class": "ほ",
+      "classifier_confidence": 0.5549595952033997,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 164,
+      "x": 622,
+      "y": 756,
+      "w": 18,
+      "h": 35,
+      "yolo_confidence": 0.9011146426200867,
+      "crop_original_shape": [
+        39,
+        22,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 35.625,
+      "classifier_class": "?",
+      "classifier_confidence": 0.34461864829063416,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 165,
+      "x": 602,
+      "y": 838,
+      "w": 35,
+      "h": 52,
+      "yolo_confidence": 0.84745192527771,
+      "crop_original_shape": [
+        56,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 50.80484693877551,
+      "classifier_class": "れ",
+      "classifier_confidence": 0.7777025699615479,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 166,
+      "x": 562,
+      "y": 176,
+      "w": 27,
+      "h": 40,
+      "yolo_confidence": 0.8763634562492371,
+      "crop_original_shape": [
+        44,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 52.51275510204081,
+      "classifier_class": "し",
+      "classifier_confidence": 0.6897139549255371,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 167,
+      "x": 559,
+      "y": 274,
+      "w": 33,
+      "h": 45,
+      "yolo_confidence": 0.8128536343574524,
+      "crop_original_shape": [
+        49,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 54.04336734693877,
+      "classifier_class": "ひ",
+      "classifier_confidence": 0.8700814247131348,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 168,
+      "x": 553,
+      "y": 322,
+      "w": 41,
+      "h": 43,
+      "yolo_confidence": 0.9319014549255371,
+      "crop_original_shape": [
+        47,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 82.1390306122449,
+      "classifier_class": "?",
+      "classifier_confidence": 0.24512793123722076,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 169,
+      "x": 552,
+      "y": 373,
+      "w": 40,
+      "h": 33,
+      "yolo_confidence": 0.9258926510810852,
+      "crop_original_shape": [
+        37,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 71.11607142857143,
+      "classifier_class": "ぬ",
+      "classifier_confidence": 0.8716767430305481,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 170,
+      "x": 555,
+      "y": 421,
+      "w": 32,
+      "h": 33,
+      "yolo_confidence": 0.907336950302124,
+      "crop_original_shape": [
+        37,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 83.13520408163265,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9994275569915771,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 171,
+      "x": 559,
+      "y": 462,
+      "w": 17,
+      "h": 46,
+      "yolo_confidence": 0.9072372913360596,
+      "crop_original_shape": [
+        50,
+        21,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 39.44515306122449,
+      "classifier_class": "に",
+      "classifier_confidence": 0.7276968359947205,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 172,
+      "x": 549,
+      "y": 512,
+      "w": 38,
+      "h": 43,
+      "yolo_confidence": 0.9161084294319153,
+      "crop_original_shape": [
+        47,
+        42,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 80.52168367346938,
+      "classifier_class": "を",
+      "classifier_confidence": 0.6844953894615173,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 173,
+      "x": 549,
+      "y": 559,
+      "w": 33,
+      "h": 43,
+      "yolo_confidence": 0.9329699277877808,
+      "crop_original_shape": [
+        47,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 76.11989795918367,
+      "classifier_class": "?",
+      "classifier_confidence": 0.3817402422428131,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 174,
+      "x": 558,
+      "y": 613,
+      "w": 14,
+      "h": 31,
+      "yolo_confidence": 0.8675163388252258,
+      "crop_original_shape": [
+        35,
+        18,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 39.59438775510204,
+      "classifier_class": "み",
+      "classifier_confidence": 0.9572342038154602,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 175,
+      "x": 549,
+      "y": 656,
+      "w": 28,
+      "h": 41,
+      "yolo_confidence": 0.8751476407051086,
+      "crop_original_shape": [
+        45,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 38.11734693877551,
+      "classifier_class": "て",
+      "classifier_confidence": 0.7883449792861938,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 176,
+      "x": 547,
+      "y": 705,
+      "w": 29,
+      "h": 42,
+      "yolo_confidence": 0.9100479483604431,
+      "crop_original_shape": [
+        46,
+        33,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 66.66198979591837,
+      "classifier_class": "す",
+      "classifier_confidence": 0.5250773429870605,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 177,
+      "x": 549,
+      "y": 751,
+      "w": 34,
+      "h": 45,
+      "yolo_confidence": 0.8969869017601013,
+      "crop_original_shape": [
+        49,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 55.67857142857143,
+      "classifier_class": "?",
+      "classifier_confidence": 0.3262389302253723,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 178,
+      "x": 539,
+      "y": 798,
+      "w": 45,
+      "h": 44,
+      "yolo_confidence": 0.9091163277626038,
+      "crop_original_shape": [
+        48,
+        49,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 84.30102040816327,
+      "classifier_class": "?",
+      "classifier_confidence": 0.24700069427490234,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 179,
+      "x": 540,
+      "y": 847,
+      "w": 32,
+      "h": 42,
+      "yolo_confidence": 0.8668277859687805,
+      "crop_original_shape": [
+        46,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 51.089285714285715,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4290296733379364,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 180,
+      "x": 498,
+      "y": 177,
+      "w": 42,
+      "h": 37,
+      "yolo_confidence": 0.9395473003387451,
+      "crop_original_shape": [
+        41,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 64.10076530612245,
+      "classifier_class": "ね",
+      "classifier_confidence": 0.5072221755981445,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 181,
+      "x": 508,
+      "y": 226,
+      "w": 16,
+      "h": 41,
+      "yolo_confidence": 0.8422659039497375,
+      "crop_original_shape": [
+        45,
+        20,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 34.545918367346935,
+      "classifier_class": "た",
+      "classifier_confidence": 0.9958829879760742,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 182,
+      "x": 495,
+      "y": 322,
+      "w": 36,
+      "h": 35,
+      "yolo_confidence": 0.9390925168991089,
+      "crop_original_shape": [
+        39,
+        40,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 72.72704081632654,
+      "classifier_class": "ひ",
+      "classifier_confidence": 0.9999969005584717,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 183,
+      "x": 496,
+      "y": 368,
+      "w": 32,
+      "h": 45,
+      "yolo_confidence": 0.8572019934654236,
+      "crop_original_shape": [
+        49,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 67.05229591836735,
+      "classifier_class": "け",
+      "classifier_confidence": 0.5888187289237976,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 184,
+      "x": 495,
+      "y": 466,
+      "w": 27,
+      "h": 44,
+      "yolo_confidence": 0.7905289530754089,
+      "crop_original_shape": [
+        48,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 43.87627551020408,
+      "classifier_class": "も",
+      "classifier_confidence": 0.8387035727500916,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 185,
+      "x": 490,
+      "y": 512,
+      "w": 42,
+      "h": 42,
+      "yolo_confidence": 0.9029284715652466,
+      "crop_original_shape": [
+        46,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 87.20663265306122,
+      "classifier_class": "?",
+      "classifier_confidence": 0.3247935473918915,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 186,
+      "x": 491,
+      "y": 562,
+      "w": 31,
+      "h": 40,
+      "yolo_confidence": 0.9411234855651855,
+      "crop_original_shape": [
+        44,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 78.10841836734694,
+      "classifier_class": "も",
+      "classifier_confidence": 0.7750563621520996,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 187,
+      "x": 489,
+      "y": 609,
+      "w": 33,
+      "h": 42,
+      "yolo_confidence": 0.9429240822792053,
+      "crop_original_shape": [
+        46,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 58.996173469387756,
+      "classifier_class": "の",
+      "classifier_confidence": 0.8694770932197571,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 188,
+      "x": 489,
+      "y": 655,
+      "w": 37,
+      "h": 47,
+      "yolo_confidence": 0.9394047260284424,
+      "crop_original_shape": [
+        51,
+        41,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 65.42857142857143,
+      "classifier_class": "れ",
+      "classifier_confidence": 0.7866979241371155,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 189,
+      "x": 489,
+      "y": 705,
+      "w": 31,
+      "h": 38,
+      "yolo_confidence": 0.9363173842430115,
+      "crop_original_shape": [
+        42,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 73.41198979591837,
+      "classifier_class": "ね",
+      "classifier_confidence": 0.5411936640739441,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 190,
+      "x": 489,
+      "y": 754,
+      "w": 31,
+      "h": 31,
+      "yolo_confidence": 0.9293285012245178,
+      "crop_original_shape": [
+        35,
+        35,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 88.24107142857143,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9766913652420044,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 191,
+      "x": 483,
+      "y": 797,
+      "w": 42,
+      "h": 44,
+      "yolo_confidence": 0.9276529550552368,
+      "crop_original_shape": [
+        48,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 83.80357142857143,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.6205593943595886,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 192,
+      "x": 497,
+      "y": 850,
+      "w": 12,
+      "h": 36,
+      "yolo_confidence": 0.8934147357940674,
+      "crop_original_shape": [
+        40,
+        16,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 36.044642857142854,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9996854066848755,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 193,
+      "x": 436,
+      "y": 180,
+      "w": 35,
+      "h": 39,
+      "yolo_confidence": 0.9382631182670593,
+      "crop_original_shape": [
+        43,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 87.00382653061224,
+      "classifier_class": "あ",
+      "classifier_confidence": 0.9973795413970947,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 194,
+      "x": 440,
+      "y": 226,
+      "w": 30,
+      "h": 38,
+      "yolo_confidence": 0.9413841366767883,
+      "crop_original_shape": [
+        42,
+        34,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 78.10969387755102,
+      "classifier_class": "?",
+      "classifier_confidence": 0.41604578495025635,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 195,
+      "x": 438,
+      "y": 270,
+      "w": 34,
+      "h": 45,
+      "yolo_confidence": 0.9318211674690247,
+      "crop_original_shape": [
+        49,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 53.18494897959184,
+      "classifier_class": "を",
+      "classifier_confidence": 0.7507885694503784,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 196,
+      "x": 435,
+      "y": 323,
+      "w": 35,
+      "h": 36,
+      "yolo_confidence": 0.9224562644958496,
+      "crop_original_shape": [
+        40,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 68.68367346938776,
+      "classifier_class": "さ",
+      "classifier_confidence": 0.7556625604629517,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 197,
+      "x": 437,
+      "y": 370,
+      "w": 27,
+      "h": 40,
+      "yolo_confidence": 0.8966644406318665,
+      "crop_original_shape": [
+        44,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 39.390306122448976,
+      "classifier_class": "そ",
+      "classifier_confidence": 0.5863078236579895,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 198,
+      "x": 429,
+      "y": 417,
+      "w": 43,
+      "h": 40,
+      "yolo_confidence": 0.9374352097511292,
+      "crop_original_shape": [
+        44,
+        47,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 95.66198979591837,
+      "classifier_class": "ね",
+      "classifier_confidence": 0.6215754151344299,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 199,
+      "x": 427,
+      "y": 466,
+      "w": 42,
+      "h": 33,
+      "yolo_confidence": 0.9313060641288757,
+      "crop_original_shape": [
+        37,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.44387755102041,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9988822340965271,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 200,
+      "x": 427,
+      "y": 512,
+      "w": 40,
+      "h": 41,
+      "yolo_confidence": 0.9248384237289429,
+      "crop_original_shape": [
+        45,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 95.66964285714286,
+      "classifier_class": "?",
+      "classifier_confidence": 0.15831856429576874,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 201,
+      "x": 443,
+      "y": 567,
+      "w": 13,
+      "h": 83,
+      "yolo_confidence": 0.5612075328826904,
+      "crop_original_shape": [
+        87,
+        17,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 20.51530612244898,
+      "classifier_class": "し",
+      "classifier_confidence": 0.9978057742118835,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 202,
+      "x": 428,
+      "y": 654,
+      "w": 34,
+      "h": 41,
+      "yolo_confidence": 0.9329962134361267,
+      "crop_original_shape": [
+        45,
+        38,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 69.91198979591837,
+      "classifier_class": "も",
+      "classifier_confidence": 0.532641589641571,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 203,
+      "x": 438,
+      "y": 707,
+      "w": 16,
+      "h": 33,
+      "yolo_confidence": 0.9147204756736755,
+      "crop_original_shape": [
+        37,
+        20,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 45.3125,
+      "classifier_class": "る",
+      "classifier_confidence": 0.996737539768219,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 204,
+      "x": 429,
+      "y": 753,
+      "w": 30,
+      "h": 36,
+      "yolo_confidence": 0.8900052309036255,
+      "crop_original_shape": [
+        40,
+        34,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 74.55357142857143,
+      "classifier_class": "わ",
+      "classifier_confidence": 0.5932523608207703,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 205,
+      "x": 423,
+      "y": 844,
+      "w": 41,
+      "h": 45,
+      "yolo_confidence": 0.9265573024749756,
+      "crop_original_shape": [
+        49,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 81.82142857142857,
+      "classifier_class": "を",
+      "classifier_confidence": 0.5380843281745911,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 206,
+      "x": 377,
+      "y": 176,
+      "w": 39,
+      "h": 38,
+      "yolo_confidence": 0.9320935606956482,
+      "crop_original_shape": [
+        42,
+        43,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 70.96683673469387,
+      "classifier_class": "?",
+      "classifier_confidence": 0.47007131576538086,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 207,
+      "x": 372,
+      "y": 223,
+      "w": 41,
+      "h": 45,
+      "yolo_confidence": 0.6180060505867004,
+      "crop_original_shape": [
+        49,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 55.72831632653061,
+      "classifier_class": "せ",
+      "classifier_confidence": 0.9092082381248474,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 208,
+      "x": 381,
+      "y": 268,
+      "w": 24,
+      "h": 47,
+      "yolo_confidence": 0.9221767783164978,
+      "crop_original_shape": [
+        51,
+        28,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 63.50255102040816,
+      "classifier_class": "も",
+      "classifier_confidence": 0.8350359797477722,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 209,
+      "x": 386,
+      "y": 318,
+      "w": 11,
+      "h": 48,
+      "yolo_confidence": 0.6902711391448975,
+      "crop_original_shape": [
+        52,
+        15,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 24.303571428571427,
+      "classifier_class": "ら",
+      "classifier_confidence": 0.9994556307792664,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 210,
+      "x": 369,
+      "y": 367,
+      "w": 41,
+      "h": 44,
+      "yolo_confidence": 0.9298054575920105,
+      "crop_original_shape": [
+        48,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 73.1313775510204,
+      "classifier_class": "れ",
+      "classifier_confidence": 0.7896370887756348,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 211,
+      "x": 379,
+      "y": 414,
+      "w": 21,
+      "h": 26,
+      "yolo_confidence": 0.6970139145851135,
+      "crop_original_shape": [
+        30,
+        25,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.826530612244895,
+      "classifier_class": "か",
+      "classifier_confidence": 0.9886707067489624,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 212,
+      "x": 381,
+      "y": 469,
+      "w": 16,
+      "h": 32,
+      "yolo_confidence": 0.8510929346084595,
+      "crop_original_shape": [
+        36,
+        20,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 39.807397959183675,
+      "classifier_class": "る",
+      "classifier_confidence": 0.9997939467430115,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 213,
+      "x": 371,
+      "y": 508,
+      "w": 32,
+      "h": 45,
+      "yolo_confidence": 0.9279367923736572,
+      "crop_original_shape": [
+        49,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 51.3469387755102,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4393671154975891,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 214,
+      "x": 365,
+      "y": 560,
+      "w": 42,
+      "h": 39,
+      "yolo_confidence": 0.9380044937133789,
+      "crop_original_shape": [
+        43,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 94.08418367346938,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2542347311973572,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 215,
+      "x": 370,
+      "y": 602,
+      "w": 36,
+      "h": 48,
+      "yolo_confidence": 0.9383363723754883,
+      "crop_original_shape": [
+        52,
+        40,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 55.43622448979592,
+      "classifier_class": "?",
+      "classifier_confidence": 0.43108996748924255,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 216,
+      "x": 367,
+      "y": 656,
+      "w": 35,
+      "h": 35,
+      "yolo_confidence": 0.9274928569793701,
+      "crop_original_shape": [
+        39,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 70.21301020408163,
+      "classifier_class": "し",
+      "classifier_confidence": 0.9874871969223022,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 217,
+      "x": 379,
+      "y": 701,
+      "w": 8,
+      "h": 41,
+      "yolo_confidence": 0.7814300656318665,
+      "crop_original_shape": [
+        45,
+        12,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 25.674744897959183,
+      "classifier_class": "ら",
+      "classifier_confidence": 0.8488617539405823,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 218,
+      "x": 363,
+      "y": 742,
+      "w": 36,
+      "h": 32,
+      "yolo_confidence": 0.5949097275733948,
+      "crop_original_shape": [
+        36,
+        40,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 76.7984693877551,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4897458553314209,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 219,
+      "x": 368,
+      "y": 795,
+      "w": 27,
+      "h": 19,
+      "yolo_confidence": 0.5262376666069031,
+      "crop_original_shape": [
+        23,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 72.09183673469387,
+      "classifier_class": "か",
+      "classifier_confidence": 0.9632901549339294,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 220,
+      "x": 315,
+      "y": 187,
+      "w": 42,
+      "h": 20,
+      "yolo_confidence": 0.920505702495575,
+      "crop_original_shape": [
+        24,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 60.48086734693877,
+      "classifier_class": "や",
+      "classifier_confidence": 0.9365023374557495,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 221,
+      "x": 316,
+      "y": 228,
+      "w": 40,
+      "h": 36,
+      "yolo_confidence": 0.9365754127502441,
+      "crop_original_shape": [
+        40,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 74.24234693877551,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2792033553123474,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 222,
+      "x": 314,
+      "y": 272,
+      "w": 35,
+      "h": 36,
+      "yolo_confidence": 0.9322498440742493,
+      "crop_original_shape": [
+        40,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 87.3890306122449,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.6981641054153442,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 223,
+      "x": 318,
+      "y": 317,
+      "w": 27,
+      "h": 40,
+      "yolo_confidence": 0.9156079888343811,
+      "crop_original_shape": [
+        44,
+        31,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 62.016581632653065,
+      "classifier_class": "?",
+      "classifier_confidence": 0.331831693649292,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 224,
+      "x": 324,
+      "y": 376,
+      "w": 13,
+      "h": 18,
+      "yolo_confidence": 0.8399336338043213,
+      "crop_original_shape": [
+        22,
+        17,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.919642857142854,
+      "classifier_class": "か",
+      "classifier_confidence": 0.5965745449066162,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 225,
+      "x": 314,
+      "y": 412,
+      "w": 33,
+      "h": 45,
+      "yolo_confidence": 0.8969582319259644,
+      "crop_original_shape": [
+        49,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 71.91836734693878,
+      "classifier_class": "は",
+      "classifier_confidence": 0.766487181186676,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 226,
+      "x": 328,
+      "y": 459,
+      "w": 12,
+      "h": 40,
+      "yolo_confidence": 0.8765029311180115,
+      "crop_original_shape": [
+        44,
+        16,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 32.61862244897959,
+      "classifier_class": "と",
+      "classifier_confidence": 0.7805277705192566,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 227,
+      "x": 310,
+      "y": 515,
+      "w": 41,
+      "h": 35,
+      "yolo_confidence": 0.9307314157485962,
+      "crop_original_shape": [
+        39,
+        45,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 54.454081632653065,
+      "classifier_class": "?",
+      "classifier_confidence": 0.48402324318885803,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 228,
+      "x": 318,
+      "y": 558,
+      "w": 15,
+      "h": 56,
+      "yolo_confidence": 0.8204200267791748,
+      "crop_original_shape": [
+        60,
+        19,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 29.169642857142858,
+      "classifier_class": "う",
+      "classifier_confidence": 0.9374691247940063,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 229,
+      "x": 307,
+      "y": 619,
+      "w": 40,
+      "h": 25,
+      "yolo_confidence": 0.8491455912590027,
+      "crop_original_shape": [
+        29,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 39.880102040816325,
+      "classifier_class": "へ",
+      "classifier_confidence": 0.997302770614624,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 230,
+      "x": 309,
+      "y": 652,
+      "w": 28,
+      "h": 44,
+      "yolo_confidence": 0.9076500535011292,
+      "crop_original_shape": [
+        48,
+        32,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 55.234693877551024,
+      "classifier_class": "は",
+      "classifier_confidence": 0.575039803981781,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 231,
+      "x": 315,
+      "y": 701,
+      "w": 19,
+      "h": 38,
+      "yolo_confidence": 0.8101378679275513,
+      "crop_original_shape": [
+        42,
+        23,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 41.201530612244895,
+      "classifier_class": "り",
+      "classifier_confidence": 0.7316249012947083,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 232,
+      "x": 306,
+      "y": 747,
+      "w": 33,
+      "h": 47,
+      "yolo_confidence": 0.9117403030395508,
+      "crop_original_shape": [
+        51,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 61.463010204081634,
+      "classifier_class": "け",
+      "classifier_confidence": 0.9921708106994629,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.14386459802538787,
+      "visual_observation": "possivelmente_cortado, sobreposto"
+    },
+    {
+      "order": 233,
+      "x": 316,
+      "y": 777,
+      "w": 18,
+      "h": 49,
+      "yolo_confidence": 0.6076739430427551,
+      "crop_original_shape": [
+        53,
+        22,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 50.130102040816325,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.5841115117073059,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 234,
+      "x": 304,
+      "y": 836,
+      "w": 32,
+      "h": 50,
+      "yolo_confidence": 0.8442043662071228,
+      "crop_original_shape": [
+        54,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 57.69770408163265,
+      "classifier_class": "?",
+      "classifier_confidence": 0.22991520166397095,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 235,
+      "x": 258,
+      "y": 175,
+      "w": 35,
+      "h": 43,
+      "yolo_confidence": 0.9369489550590515,
+      "crop_original_shape": [
+        47,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 74.74872448979592,
+      "classifier_class": "?",
+      "classifier_confidence": 0.4318223297595978,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 236,
+      "x": 257,
+      "y": 223,
+      "w": 32,
+      "h": 39,
+      "yolo_confidence": 0.9433244466781616,
+      "crop_original_shape": [
+        43,
+        36,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 66.50892857142857,
+      "classifier_class": "の",
+      "classifier_confidence": 0.9389697313308716,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 237,
+      "x": 260,
+      "y": 268,
+      "w": 29,
+      "h": 47,
+      "yolo_confidence": 0.9379517436027527,
+      "crop_original_shape": [
+        51,
+        33,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.61352040816327,
+      "classifier_class": "や",
+      "classifier_confidence": 0.5436286926269531,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 238,
+      "x": 251,
+      "y": 329,
+      "w": 40,
+      "h": 10,
+      "yolo_confidence": 0.9020431637763977,
+      "crop_original_shape": [
+        14,
+        44,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 31.022959183673468,
+      "classifier_class": "へ",
+      "classifier_confidence": 0.9340722560882568,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 239,
+      "x": 254,
+      "y": 364,
+      "w": 33,
+      "h": 43,
+      "yolo_confidence": 0.93975830078125,
+      "crop_original_shape": [
+        47,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 75.67091836734694,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2271784245967865,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 240,
+      "x": 263,
+      "y": 412,
+      "w": 14,
+      "h": 40,
+      "yolo_confidence": 0.8420898914337158,
+      "crop_original_shape": [
+        44,
+        18,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 34.5,
+      "classifier_class": "よ",
+      "classifier_confidence": 0.999371349811554,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 241,
+      "x": 263,
+      "y": 456,
+      "w": 18,
+      "h": 49,
+      "yolo_confidence": 0.8697436451911926,
+      "crop_original_shape": [
+        53,
+        22,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 34.00127551020408,
+      "classifier_class": "も",
+      "classifier_confidence": 0.7667791843414307,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 242,
+      "x": 252,
+      "y": 510,
+      "w": 35,
+      "h": 42,
+      "yolo_confidence": 0.9390743970870972,
+      "crop_original_shape": [
+        46,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 93.31377551020408,
+      "classifier_class": "?",
+      "classifier_confidence": 0.3337497115135193,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 243,
+      "x": 248,
+      "y": 554,
+      "w": 39,
+      "h": 40,
+      "yolo_confidence": 0.9291819334030151,
+      "crop_original_shape": [
+        44,
+        43,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 64.06760204081633,
+      "classifier_class": "?",
+      "classifier_confidence": 0.3089020252227783,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 244,
+      "x": 247,
+      "y": 605,
+      "w": 37,
+      "h": 41,
+      "yolo_confidence": 0.9369537830352783,
+      "crop_original_shape": [
+        45,
+        41,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 96.81505102040816,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2766059339046478,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 245,
+      "x": 258,
+      "y": 651,
+      "w": 15,
+      "h": 39,
+      "yolo_confidence": 0.8423656225204468,
+      "crop_original_shape": [
+        43,
+        19,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 35.55612244897959,
+      "classifier_class": "よ",
+      "classifier_confidence": 0.9999663829803467,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 246,
+      "x": 254,
+      "y": 694,
+      "w": 19,
+      "h": 47,
+      "yolo_confidence": 0.849515438079834,
+      "crop_original_shape": [
+        51,
+        23,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 42.058673469387756,
+      "classifier_class": "?",
+      "classifier_confidence": 0.13637003302574158,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 247,
+      "x": 247,
+      "y": 749,
+      "w": 37,
+      "h": 34,
+      "yolo_confidence": 0.9288435578346252,
+      "crop_original_shape": [
+        38,
+        41,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 75.25127551020408,
+      "classifier_class": "に",
+      "classifier_confidence": 0.9939566850662231,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 248,
+      "x": 246,
+      "y": 793,
+      "w": 33,
+      "h": 43,
+      "yolo_confidence": 0.9296255111694336,
+      "crop_original_shape": [
+        47,
+        37,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 67.54081632653062,
+      "classifier_class": "?",
+      "classifier_confidence": 0.3078489601612091,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 249,
+      "x": 242,
+      "y": 840,
+      "w": 42,
+      "h": 46,
+      "yolo_confidence": 0.9249624013900757,
+      "crop_original_shape": [
+        50,
+        46,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 92.21301020408163,
+      "classifier_class": "ね",
+      "classifier_confidence": 0.8098768591880798,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    }
+  ]
+}
