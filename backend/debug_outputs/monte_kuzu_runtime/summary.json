@@ -1,0 +1,290 @@
+{
+  "image_path": "C:\\Users\\rafae\\OneDrive\\Imagens\\monte_kuzu.png",
+  "output_dir": "backend\\debug_outputs\\monte_kuzu_runtime",
+  "image_shape": [
+    166,
+    656,
+    3
+  ],
+  "confidence_threshold": 0.5,
+  "raw_yolo_boxes": 9,
+  "ordered_yolo_boxes": 9,
+  "pipeline_segments": 9,
+  "reconstructed_valid_segments": 9,
+  "classification_results": 9,
+  "classifier_error": null,
+  "iou_pairs_over_0_10": [
+    {
+      "a": 3,
+      "b": 4,
+      "iou": 0.22414767376153702
+    },
+    {
+      "a": 3,
+      "b": 5,
+      "iou": 0.31232558139534883
+    },
+    {
+      "a": 4,
+      "b": 5,
+      "iou": 0.4389357712142522
+    },
+    {
+      "a": 8,
+      "b": 9,
+      "iou": 0.6985294117647058
+    }
+  ],
+  "iou_pairs_over_0_50": [
+    {
+      "a": 8,
+      "b": 9,
+      "iou": 0.6985294117647058
+    }
+  ],
+  "rows": [
+    {
+      "order": 1,
+      "x": 521,
+      "y": 15,
+      "w": 89,
+      "h": 76,
+      "yolo_confidence": 0.8853261470794678,
+      "crop_original_shape": [
+        80,
+        93,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 81.94642857142857,
+      "classifier_class": "?",
+      "classifier_confidence": 0.18393467366695404,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.024353284987552765,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 2,
+      "x": 564,
+      "y": 86,
+      "w": 45,
+      "h": 60,
+      "yolo_confidence": 0.8326041102409363,
+      "crop_original_shape": [
+        64,
+        49,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 70.7015306122449,
+      "classifier_class": "な",
+      "classifier_confidence": 0.5524364113807678,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 3,
+      "x": 364,
+      "y": 21,
+      "w": 81,
+      "h": 34,
+      "yolo_confidence": 0.5293884873390198,
+      "crop_original_shape": [
+        38,
+        85,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 47.07270408163265,
+      "classifier_class": "?",
+      "classifier_confidence": 0.44019871950149536,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.31232558139534883,
+      "visual_observation": "possivelmente_cortado, sobreposto"
+    },
+    {
+      "order": 4,
+      "x": 365,
+      "y": 20,
+      "w": 35,
+      "h": 107,
+      "yolo_confidence": 0.6290813088417053,
+      "crop_original_shape": [
+        111,
+        39,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 36.97831632653061,
+      "classifier_class": "ま",
+      "classifier_confidence": 0.828037440776825,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.4389357712142522,
+      "visual_observation": "possivelmente_cortado, sobreposto"
+    },
+    {
+      "order": 5,
+      "x": 365,
+      "y": 20,
+      "w": 79,
+      "h": 108,
+      "yolo_confidence": 0.5294910669326782,
+      "crop_original_shape": [
+        112,
+        83,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 80.26913265306122,
+      "classifier_class": "?",
+      "classifier_confidence": 0.2752237021923065,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 6,
+      "x": 241,
+      "y": 22,
+      "w": 14,
+      "h": 19,
+      "yolo_confidence": 0.8609838485717773,
+      "crop_original_shape": [
+        23,
+        18,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 59.839285714285715,
+      "classifier_class": "ゝ",
+      "classifier_confidence": 0.980930745601654,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 7,
+      "x": 204,
+      "y": 57,
+      "w": 80,
+      "h": 95,
+      "yolo_confidence": 0.7540415525436401,
+      "crop_original_shape": [
+        99,
+        84,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 79.9859693877551,
+      "classifier_class": "し",
+      "classifier_confidence": 0.8142998814582825,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    },
+    {
+      "order": 8,
+      "x": 42,
+      "y": 20,
+      "w": 84,
+      "h": 105,
+      "yolo_confidence": 0.8482517004013062,
+      "crop_original_shape": [
+        109,
+        88,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 72.18239795918367,
+      "classifier_class": "あ",
+      "classifier_confidence": 0.9826406836509705,
+      "became_unknown": false,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.6985294117647058,
+      "visual_observation": "possivelmente_cortado, duplicado_sobreposto"
+    },
+    {
+      "order": 9,
+      "x": 42,
+      "y": 30,
+      "w": 84,
+      "h": 126,
+      "yolo_confidence": 0.6082035303115845,
+      "crop_original_shape": [
+        130,
+        88,
+        3
+      ],
+      "crop_final_shape": [
+        28,
+        28
+      ],
+      "dtype": "uint8",
+      "min": 0,
+      "max": 255,
+      "mean": 69.0420918367347,
+      "classifier_class": "?",
+      "classifier_confidence": 0.48492392897605896,
+      "became_unknown": true,
+      "valid_segment": true,
+      "max_iou_with_later_box": 0.0,
+      "visual_observation": "possivelmente_cortado"
+    }
+  ]
+}

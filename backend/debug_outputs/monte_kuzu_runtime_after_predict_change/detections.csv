@@ -1,0 +1,8 @@
+order,x,y,w,h,yolo_confidence,crop_original_shape,crop_final_shape,dtype,min,max,mean,classifier_class,classifier_confidence,became_unknown,valid_segment,max_iou_with_later_box,visual_observation
+1,521,15,89,76,0.8853261470794678,"[80, 93, 3]","[28, 28]",uint8,0,255,81.94642857142857,?,0.1839347779750824,True,True,0.024353284987552765,possivelmente_cortado
+2,564,86,45,60,0.8326041102409363,"[64, 49, 3]","[28, 28]",uint8,0,255,70.7015306122449,な,0.5524362921714783,False,True,0.0,possivelmente_cortado
+3,364,21,81,34,0.5293884873390198,"[38, 85, 3]","[28, 28]",uint8,0,255,47.07270408163265,?,0.4401985704898834,True,True,0.22414767376153702,"possivelmente_cortado, sobreposto"
+4,365,20,35,107,0.6290813088417053,"[111, 39, 3]","[28, 28]",uint8,0,255,36.97831632653061,ま,0.828037440776825,False,True,0.0,possivelmente_cortado
+5,241,22,14,19,0.8609838485717773,"[23, 18, 3]","[28, 28]",uint8,0,255,59.839285714285715,ゝ,0.980930745601654,False,True,0.0,possivelmente_cortado
+6,204,57,80,95,0.7540415525436401,"[99, 84, 3]","[28, 28]",uint8,0,255,79.9859693877551,し,0.8142998218536377,False,True,0.0,possivelmente_cortado
+7,42,20,84,105,0.8482517004013062,"[109, 88, 3]","[28, 28]",uint8,0,255,72.18239795918367,あ,0.9826405644416809,False,True,0.0,possivelmente_cortado

@@ -111,8 +111,10 @@ class SegmentationService:
 
         results = self.model.predict(
             source=image_bgr,
-            conf=self.confidence_threshold,
             verbose=False,
+            conf=0.6,       # era provavelmente 0.25 — aumentar elimina predições fracas
+            iou=0.25,        # era provavelmente 0.45 — reduzir torna o NMS mais agressivo
+            agnostic_nms=True  # NMS entre todas as classes, não só por classe
         )
 
         if not results:
